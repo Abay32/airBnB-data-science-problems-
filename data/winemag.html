@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="winemag_files/css.css" rel="stylesheet"><link href="winemag_files/jquery.css" rel="stylesheet"><title>StrataScratch</title><script type="text/javascript" async="" src="winemag_files/analytics.js"></script><script type="text/javascript" async="" src="winemag_files/js_002.js"></script><script>!function(n,u){n._rwq=u,n[u]=n[u]||function(){(n[u].q=n[u].q||[]).push(arguments)}}(window,"rewardful")</script><script async="" src="winemag_files/rw.js" data-rewardful="509d71"></script><script async="" src="winemag_files/js.js"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-115949776-1")</script><link rel="shortcut icon" href="https://platform.stratascratch.com/fav.png"><link href="winemag_files/styles90c1f1e92fe3ca728ca6.css" rel="stylesheet"><style>.strata-editor-dragbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12px;
+  cursor: row-resize;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9FZGl0b3JEcmFnQmFyLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQWE7RUFDYix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLFlBQVk7RUFDWixrQkFBa0I7QUFDcEIiLCJzb3VyY2VzQ29udGVudCI6WyIuc3RyYXRhLWVkaXRvci1kcmFnYmFyIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGhlaWdodDogMTJweDtcbiAgY3Vyc29yOiByb3ctcmVzaXplO1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>.strata-editor-container {
+  position: relative;
+  background-color: #f5f5f5;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.strata-editor-container .ace_editor {
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333333;
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.ace-github .ace_print-margin {
+  background: transparent !important;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9Db2RlRWRpdG9yLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLHNCQUFzQjtFQUN0QixtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSx1QkFBdUI7RUFDdkIscUJBQXFCO0VBQ3JCLHFCQUFxQjtFQUNyQixjQUFjO0VBQ2QsOERBQThEO0FBQ2hFOztBQUVBO0VBQ0Usa0NBQWtDO0FBQ3BDIiwic291cmNlc0NvbnRlbnQiOlsiLnN0cmF0YS1lZGl0b3ItY29udGFpbmVyIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjVmNWY1O1xuICBib3JkZXItcmFkaXVzOiAycHg7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG4gIG1hcmdpbi1ib3R0b206IDFyZW07XG59XG5cbi5zdHJhdGEtZWRpdG9yLWNvbnRhaW5lciAuYWNlX2VkaXRvciB7XG4gIGxpbmUtaGVpZ2h0OiAxLjQyODU3MTQzO1xuICB3b3JkLWJyZWFrOiBicmVhay1hbGw7XG4gIHdvcmQtd3JhcDogYnJlYWstd29yZDtcbiAgY29sb3I6ICMzMzMzMzM7XG4gIGZvbnQtZmFtaWx5OiBNZW5sbywgTW9uYWNvLCBDb25zb2xhcywgJ0NvdXJpZXIgTmV3JywgbW9ub3NwYWNlO1xufVxuXG4uYWNlLWdpdGh1YiAuYWNlX3ByaW50LW1hcmdpbiB7XG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50ICFpbXBvcnRhbnQ7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.strata-editor-extension {
+  color: #fff;
+  background-color: #ccc;
+}
+
+.strata-editor-caption-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 9px;
+  font-size: 1rem;
+}
+
+.strata-editor-dataset-tables {
+  border-radius: 0.25rem;
+  padding: 0 0.5rem;
+  background-color: #b7e9f0;
+  color: #249cac;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9FZGl0b3JDYXB0aW9uQmFyLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQVc7RUFDWCxzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxhQUFhO0VBQ2IsOEJBQThCO0VBQzlCLG1CQUFtQjtFQUNuQixnQkFBZ0I7RUFDaEIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLHNCQUFzQjtFQUN0QixpQkFBaUI7RUFDakIseUJBQXlCO0VBQ3pCLGNBQWM7QUFDaEIiLCJzb3VyY2VzQ29udGVudCI6WyIuc3RyYXRhLWVkaXRvci1leHRlbnNpb24ge1xuICBjb2xvcjogI2ZmZjtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2NjYztcbn1cblxuLnN0cmF0YS1lZGl0b3ItY2FwdGlvbi1iYXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIHBhZGRpbmc6IDJweCA5cHg7XG4gIGZvbnQtc2l6ZTogMXJlbTtcbn1cblxuLnN0cmF0YS1lZGl0b3ItZGF0YXNldC10YWJsZXMge1xuICBib3JkZXItcmFkaXVzOiAwLjI1cmVtO1xuICBwYWRkaW5nOiAwIDAuNXJlbTtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2I3ZTlmMDtcbiAgY29sb3I6ICMyNDljYWM7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.strata-editor-spin {
+  animation: spin 1.5s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9RdWVyeUJ1dHRvbi5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxvQ0FBb0M7QUFDdEM7O0FBRUE7RUFDRTtJQUNFLHVCQUF1QjtJQUN2Qix1QkFBdUI7RUFDekI7RUFDQTtJQUNFLHlCQUF5QjtJQUN6Qix5QkFBeUI7RUFDM0I7QUFDRiIsInNvdXJjZXNDb250ZW50IjpbIi5zdHJhdGEtZWRpdG9yLXNwaW4ge1xuICBhbmltYXRpb246IHNwaW4gMS41cyBpbmZpbml0ZSBsaW5lYXI7XG59XG5cbkBrZXlmcmFtZXMgc3BpbiB7XG4gIGZyb20ge1xuICAgIHRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xuICAgIHRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xuICB9XG4gIHRvIHtcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpO1xuICAgIHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7XG4gIH1cbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><style>.strata-editor-buttons-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.strata-editor-hotkey-message {
+  margin-top: 0.25rem;
+  color: rgb(130, 130, 130);
+  font-size: 0.8125rem;
+  text-align: right;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9RdWVyeUJ1dHRvbnNTZWN0aW9uLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsbUJBQW1CO0VBQ25CLFdBQVc7QUFDYjs7QUFFQTtFQUNFLG1CQUFtQjtFQUNuQix5QkFBeUI7RUFDekIsb0JBQW9CO0VBQ3BCLGlCQUFpQjtBQUNuQiIsInNvdXJjZXNDb250ZW50IjpbIi5zdHJhdGEtZWRpdG9yLWJ1dHRvbnMtd3JhcHBlciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGdhcDogMC41cmVtO1xufVxuXG4uc3RyYXRhLWVkaXRvci1ob3RrZXktbWVzc2FnZSB7XG4gIG1hcmdpbi10b3A6IDAuMjVyZW07XG4gIGNvbG9yOiByZ2IoMTMwLCAxMzAsIDEzMCk7XG4gIGZvbnQtc2l6ZTogMC44MTI1cmVtO1xuICB0ZXh0LWFsaWduOiByaWdodDtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><style>.strata-editor-result-table {
+  font-size: 1rem;
+}
+
+.table-striped.strata-editor-result-table tr.wrong {
+  background-color: #ffb9b9;
+}
+
+.table-striped.strata-editor-result-table tr.correct {
+  background-color: #90ee90;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9RdWVyeVJlc3VsdFRhYmxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSx5QkFBeUI7QUFDM0I7O0FBRUE7RUFDRSx5QkFBeUI7QUFDM0IiLCJzb3VyY2VzQ29udGVudCI6WyIuc3RyYXRhLWVkaXRvci1yZXN1bHQtdGFibGUge1xuICBmb250LXNpemU6IDFyZW07XG59XG5cbi50YWJsZS1zdHJpcGVkLnN0cmF0YS1lZGl0b3ItcmVzdWx0LXRhYmxlIHRyLndyb25nIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmYjliOTtcbn1cblxuLnRhYmxlLXN0cmlwZWQuc3RyYXRhLWVkaXRvci1yZXN1bHQtdGFibGUgdHIuY29ycmVjdCB7XG4gIGJhY2tncm91bmQtY29sb3I6ICM5MGVlOTA7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.strata-editor-output-title {
+  margin-top: 1rem;
+  font-size: 1.1875rem;
+  color: rgb(130, 130, 130);
+}
+
+.white-space-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.strata-editor-console-output {
+  padding: 1rem 2rem;
+}
+
+.strata-editor-alert {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+}
+
+.strata-editor-alert.info {
+  background-color: #b7e9f0;
+  color: #249cac;
+}
+
+.strata-editor-alert.warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.strata-editor-alert.danger {
+  background-color: #ffb9b9;
+  color: #c60201;
+}
+
+.strata-editor-results-table-wrapper {
+  max-height: 24rem;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.strata-editor-results-table-wrapper table {
+  margin-bottom: 0;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9FeGVjdXRpb25SZXN1bHRzLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQixvQkFBb0I7RUFDcEIseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UscUJBQXFCO0FBQ3ZCOztBQUVBO0VBQ0Usa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0Usd0JBQXdCO0VBQ3hCLG1CQUFtQjtFQUNuQixlQUFlO0VBQ2Ysc0JBQXNCO0FBQ3hCOztBQUVBO0VBQ0UseUJBQXlCO0VBQ3pCLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSx5QkFBeUI7RUFDekIsY0FBYztBQUNoQjs7QUFFQTtFQUNFLHlCQUF5QjtFQUN6QixjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLGNBQWM7RUFDZCxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEIiLCJzb3VyY2VzQ29udGVudCI6WyIuc3RyYXRhLWVkaXRvci1vdXRwdXQtdGl0bGUge1xuICBtYXJnaW4tdG9wOiAxcmVtO1xuICBmb250LXNpemU6IDEuMTg3NXJlbTtcbiAgY29sb3I6IHJnYigxMzAsIDEzMCwgMTMwKTtcbn1cblxuLndoaXRlLXNwYWNlLXByZS13cmFwIHtcbiAgd2hpdGUtc3BhY2U6IHByZS13cmFwO1xufVxuXG4uc3RyYXRhLWVkaXRvci1jb25zb2xlLW91dHB1dCB7XG4gIHBhZGRpbmc6IDFyZW0gMnJlbTtcbn1cblxuLnN0cmF0YS1lZGl0b3ItYWxlcnQge1xuICBwYWRkaW5nOiAwLjc1cmVtIDEuMjVyZW07XG4gIG1hcmdpbi1ib3R0b206IDFyZW07XG4gIGZvbnQtc2l6ZTogMXJlbTtcbiAgYm9yZGVyLXJhZGl1czogMC4yNXJlbTtcbn1cblxuLnN0cmF0YS1lZGl0b3ItYWxlcnQuaW5mbyB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNiN2U5ZjA7XG4gIGNvbG9yOiAjMjQ5Y2FjO1xufVxuXG4uc3RyYXRhLWVkaXRvci1hbGVydC53YXJuaW5nIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjNjZDtcbiAgY29sb3I6ICM4NTY0MDQ7XG59XG5cbi5zdHJhdGEtZWRpdG9yLWFsZXJ0LmRhbmdlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmI5Yjk7XG4gIGNvbG9yOiAjYzYwMjAxO1xufVxuXG4uc3RyYXRhLWVkaXRvci1yZXN1bHRzLXRhYmxlLXdyYXBwZXIge1xuICBtYXgtaGVpZ2h0OiAyNHJlbTtcbiAgb3ZlcmZsb3c6IGF1dG87XG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XG59XG5cbi5zdHJhdGEtZWRpdG9yLXJlc3VsdHMtdGFibGUtd3JhcHBlciB0YWJsZSB7XG4gIG1hcmdpbi1ib3R0b206IDA7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.strata-editor-code-widget {
+  margin-bottom: 2rem;
+}
+
+.strata-editor-question-link {
+  font-size: 1rem;
+}
+
+.strata-editor-error-inset {
+  position: absolute;
+  inset: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f2f2f2;
+  font-weight: 500;
+  z-index: 5;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9Db2RlRWRpdG9yV2lkZ2V0LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIseUJBQXlCO0VBQ3pCLGdCQUFnQjtFQUNoQixVQUFVO0FBQ1oiLCJzb3VyY2VzQ29udGVudCI6WyIuc3RyYXRhLWVkaXRvci1jb2RlLXdpZGdldCB7XG4gIG1hcmdpbi1ib3R0b206IDJyZW07XG59XG5cbi5zdHJhdGEtZWRpdG9yLXF1ZXN0aW9uLWxpbmsge1xuICBmb250LXNpemU6IDFyZW07XG59XG5cbi5zdHJhdGEtZWRpdG9yLWVycm9yLWluc2V0IHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBpbnNldDogMXJlbTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2YyZjJmMjtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgei1pbmRleDogNTtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><script src="winemag_files/v3.js"></script></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><header class="top" style="position: relative; z-index: 1000;"><nav class="navbar-static-top navbar-inverse navbar navbar-expand-md navbar-light"><a href="https://stratascratch.com/" class="navbar-brand"><img src="winemag_files/superset-logo.png" alt="Superset Logo" width="126"></a><button aria-controls="basic-navbar-nav" type="button" aria-label="Toggle navigation" class="navbar-toggler collapsed"><span class="navbar-toggler-icon"></span></button><div class="navbar-collapse collapse" id="basic-navbar-nav"><div class="mr-auto navbar-nav"><li><a href="https://platform.stratascratch.com/coding" data-rb-event-key="/coding" class="navbar-marging nav-link">Coding Questions</a></li><li><a href="https://platform.stratascratch.com/technical" data-rb-event-key="/technical" class="navbar-marging nav-link">Non-coding Questions</a></li></div><div class="navbar-nav"><li><a href="https://platform.stratascratch.com/pricing" data-rb-event-key="/pricing" class="navbar-marging nav-link"><i class="fa fa-lock" style="color: gold;"></i> Upgrade to Premium</a></li><li class="float-right"><div class="dropdown"><a href="" class="navbar-marging nav-link"><i class="fa fa-user"></i> Profile</a></div></li><li class="float-right"><a href="#" class="navbar-marging nav-link" role="button"><i class="fa fa-fw fa-sign-out"></i> Logout</a></li></div></div></nav></header><main><div style="margin-bottom: 40px; margin-top: 40px;" class="justify-content-md-center row"><div class="col-md-10"><div style="width: 100%; height: 20px; overflow-x: scroll;"><div style="width: 0px; height: 20px;"></div></div><div class="scroll-horizontal"><p class="text-grey">Your Solution Output:</p><table class="table table-bordered table-striped fixed-width strata-editor-result-table "><thead><tr><th>id</th><th>country</th><th>description</th><th>designation</th><th>points</th><th>price</th><th>province</th><th>region_1</th><th>region_2</th><th>variety</th><th>winery</th></tr></thead><tbody id="myTable"><tr class=""><td>126576</td><td>US</td><td>Rich
+ and round, this offers plenty of concentrated blackberry notes 
+enveloped in warm spices and supple oak. There's a hint of green tomato 
+leaves throughout, but the lush fruit combined with sturdy grape tannins
+ and high acidity would pair well with fatty short ribs or braised pork.</td><td>Estate Club</td><td>87</td><td>32</td><td>Virginia</td><td>Virginia</td><td></td><td>Merlot</td><td>Veramar</td></tr><tr class=""><td>127077</td><td>Italy</td><td>This
+ luminous sparkler offers measured aromas of yellow fruit and honey and 
+delivers a broad, wide approach in the mouth. The wine's texture is 
+creamy and full and there is a spicy point of effervescence on the 
+palate.</td><td>Extra Dry</td><td>85</td><td>19</td><td>Veneto</td><td>Prosecco di Valdobbiadene</td><td></td><td>Prosecco</td><td>Varaschin</td></tr><tr class=""><td>143029</td><td>US</td><td>There
+ are some pretty features to this wine, namely the lovely tannins and 
+rich fruit, but it's just too soft and sweet. Tastes like blackberry 
+jam, with extra white sugar spinkled on top.</td><td>Signature</td><td>83</td><td>45</td><td>California</td><td>Paso Robles</td><td>Central Coast</td><td>Cabernet Sauvignon</td><td>Byington</td></tr><tr class=""><td>98813</td><td>US</td><td>Lovely
+ nose, which runs from violets and cherries right into coffee and sweet 
+chocolate. In the mouth the wine coats the palate with Napa-like 
+intensity, only buttressed with more vivid acidity. It's both smooth and
+ deep. The aromas are more detailed, interesting and really clean, 
+loaded with dark flavors of soy, coffee, molasses and black cherry 
+liqueur.</td><td>Champoux &amp; Loess Vineyards Reserve</td><td>93</td><td>100</td><td>Washington</td><td>Washington</td><td>Washington Other</td><td>Cabernet Sauvignon</td><td>Boudreaux Cellars</td></tr><tr class=""><td>43172</td><td>US</td><td>Tastes
+ sweeter and fruitier than the 2009, which was dry, so if you like 
+orange marmalade, pineapple tart and vanilla cookie sugariness in your 
+Sauvignon Blancs, it's for you.</td><td>Les Pionniers</td><td>86</td><td>40</td><td>California</td><td>Sonoma County</td><td>Sonoma</td><td>Sauvignon Blanc</td><td>Capture</td></tr><tr class=""><td>14959</td><td>France</td><td>The
+ Jaume family's nÌ©gociant business is thriving because of wines like 
+this that faithfully represent their terroirs while offering solid 
+value. This raspberry- and garrigue-scented wine features ample weight 
+framed by supple tannins that firm up on the finish. Drink nowÛÒ2018.</td><td>Les Valats</td><td>89</td><td>27</td><td>RhÌ«ne Valley</td><td>Rasteau</td><td></td><td>RhÌ«ne-style Red Blend</td><td>Alain Jaume et Fils</td></tr><tr class=""><td>11285</td><td>Austria</td><td>Beautifully
+ pure apple fruit plays on nose and palate. Citrus juice frames the 
+fruit and heightens the freshness even more. If you like a slender, 
+supercrisp style of Riesling, the purity of this will have you hooked.</td><td></td><td>93</td><td>20</td><td>Kamptal</td><td></td><td></td><td>Riesling</td><td>Schloss Gobelsburg</td></tr><tr class=""><td>115487</td><td>US</td><td>This
+ was a very good vintage for Goldeneye, the best since '01. The fruit 
+got ripe, offering up a big mouthful of jammy cherry and raspberry 
+flavors accented with sweet oak. The tannin-acid balance is just great. 
+It's delicious, yet has all kinds of complex edges and nuances.</td><td></td><td>93</td><td>52</td><td>California</td><td>Anderson Valley</td><td>Mendocino/Lake Counties</td><td>Pinot Noir</td><td>Goldeneye</td></tr><tr class=""><td>77153</td><td>US</td><td>Shows
+ classic varietal flavors of cherries, raspberries and Dr. Pepper, with a
+ sweet edge of smoky oak. Enjoyable now for its forward fruit and silky 
+texture.</td><td></td><td>86</td><td>17</td><td>California</td><td>California</td><td>California Other</td><td>Pinot Noir</td><td>Donovan-Parke</td></tr><tr class=""><td>131535</td><td>US</td><td>A
+ very nice, casual Merlot that has layers of complex elegance beyond 
+just the fruit. And what fruit it is, ripe and sweet in cherry pie, 
+raspberry cream, cola and vanilla, with a splash of cassis. Fortunately,
+ there's enough acidity and tannin for balance.</td><td>Crimson Creek</td><td>88</td><td>27</td><td>California</td><td>Napa Valley</td><td>Napa</td><td>Merlot</td><td>Pine Ridge</td></tr><tr class=""><td>89695</td><td>Argentina</td><td>Opens
+ with hard, rubbery, leathery aromas. In the mouth, it's thick and chewy
+ with black fruit but also an herbal edge. There's depth and plenty of 
+oak here, and it finishes sweet and relatively smooth. Starts rough, 
+improves in the middle, and then finishes fairly well.</td><td>Trumpeter</td><td>86</td><td>12</td><td>Mendoza Province</td><td>Mendoza</td><td></td><td>Malbec-Syrah</td><td>Rutini</td></tr><tr class=""><td>44672</td><td>US</td><td>A
+ tough, gritty little Pinot Noir, not quite ripe. It smells and tastes 
+of green mint and peppercorns, alongside the cherries and cola, and is 
+rugged in texture.</td><td></td><td>85</td><td>17</td><td>California</td><td>Central Coast</td><td>Central Coast</td><td>Pinot Noir</td><td>Santa Barbara Winery</td></tr><tr class=""><td>14710</td><td>France</td><td>Opulent
+ and ripe, full bodied and rich, this has notes of toast and spice as 
+well as apricot and pear flavors. With its balanced character, it can be
+ consumed now, but it will also age for another year.</td><td>Domaine Beranger</td><td>88</td><td>25</td><td>Burgundy</td><td>Pouilly-FuissÌ©</td><td></td><td>Chardonnay</td><td>Georges Duboeuf</td></tr><tr class=""><td>189</td><td>Spain</td><td>Coffee
+ grinds, raisin and baked aromas suggest overripeness. This is heavy, 
+broad and a bit clumsy on the palate. Berry and prune flavors are solid 
+but not overly fresh, while the finish is full and raisiny as it 
+improves over time.</td><td>Negre</td><td>87</td><td>22</td><td>Catalonia</td><td>Montsant</td><td></td><td>Red Blend</td><td>Jaspi</td></tr><tr class=""><td>28037</td><td>Austria</td><td>Gentle
+ red-cherry fruit, soft and pliable tannins and fresh acidity combine to
+ make this a simple and cheerful light red for drinking now.</td><td></td><td>83</td><td>24</td><td>Burgenland</td><td></td><td></td><td>BlaufrÌ_nkisch</td><td>HÌ¦pler</td></tr><tr class=""><td>70078</td><td>US</td><td>Hot,
+ tannic and simple, with cherry jam and currant flavors accompanied by 
+high, tart acidity and chile-pepper alcohol heat. An unbalanced wine.</td><td>Estate Bottled</td><td>81</td><td>26</td><td>California</td><td>Shenandoah Valley (CA)</td><td>Sierra Foothills</td><td>Sangiovese</td><td>Bella Piazza</td></tr><tr class=""><td>150579</td><td>US</td><td>Big,
+ fruity wine, with layers of fruit, earth, toast and oak. Spicy 
+cranberry/raspberry fruit leads into toasty, dry tannins. There is a 
+lovely density, buttressed with new oak, but anchored with ripe, firm 
+fruit. Lovely winemaking.</td><td>Alegria</td><td>91</td><td>26</td><td>California</td><td>Russian River Valley</td><td>Sonoma</td><td>Zinfandel</td><td>Rosenblum</td></tr><tr class=""><td>8438</td><td>France</td><td>Big,
+ ripe and fruity, it combines a rich character along with the firmest 
+tannins and dense structure. Acidity adds a touch of freshness, while 
+the structure and full fruit are concentrated and still young. Give this
+ solid, dark wine at least until 2020.</td><td></td><td>94</td><td>294</td><td>Burgundy</td><td>Mazis-Chambertin</td><td></td><td>Pinot Noir</td><td>Domaine Faiveley</td></tr><tr class=""><td>71661</td><td>US</td><td>Here's
+ a good buy in a nice, dry, crisp young Sauvignon Blanc. It has subtle 
+green grass, citrus and vanilla flavors, and finishes clean and zesty.</td><td></td><td>85</td><td>8</td><td>California</td><td>California</td><td>California Other</td><td>Sauvignon Blanc</td><td>Pepperwood Grove</td></tr><tr class=""><td>136867</td><td>New Zealand</td><td>This
+ is a pretty, delicately perfumed Pinot Noir, with elegantly intertwined
+ cherry and herb notes. It's light to medium in body, with a finish that
+ shows just a touch of sinewy intensity. Drink it over the next year or 
+so.</td><td></td><td>87</td><td>18</td><td>Marlborough</td><td></td><td></td><td>Pinot Noir</td><td>Dashwood</td></tr><tr class=""><td>25563</td><td>US</td><td>Wonderfully
+ rich with lush dark chocolate and espresso notes, this is another 
+lovely, highly drinkable Merlot from Comtesse ThÌ©rÌ¬se. There's a good 
+amount of charred oak, but it's integrated seamlessly with concentrated 
+black plum and berry flavors. The finish is long, and accented by 
+pleasant astringency of walnut skins and tobacco.</td><td>Traditional</td><td>87</td><td>18</td><td>New York</td><td>North Fork of Long Island</td><td>Long Island</td><td>Merlot</td><td>Comtesse ThÌ©rÌ¬se</td></tr><tr class=""><td>23710</td><td>Argentina</td><td>Foxy
+ cherry and cough drop aromas are not convincing. Feels astringent and 
+tastes tart, with sharp but candied cherry, faux oak and milk chocolate 
+flavors. Blends sour notes with sweet oak, all to little avail.</td><td>Family Vineyards Organic Legacy Old Vines Single Vineyard</td><td>82</td><td>25</td><td>Mendoza Province</td><td>Mendoza</td><td></td><td>Malbec</td><td>Caligiore</td></tr><tr class=""><td>124140</td><td>Italy</td><td>This
+ is a simple and cheerful Nero d'Avola that would pair well with white 
+meats such as roast chicken or pork. Aromas here include blueberry, 
+forest berry and there's a touch of bitter almond on the close.</td><td>Regaleali</td><td>86</td><td>12</td><td>Sicily &amp; Sardinia</td><td>Sicilia</td><td></td><td>Nero d'Avola</td><td>Tasca d'Almerita</td></tr><tr class=""><td>138408</td><td>US</td><td>Forward
+ and lush, with a beautiful structure, this dry, balanced wine has 
+cherry, cassis, wintergreen and oak flavors that finish in a swirl of 
+complexity. This fine wine defines the elegance and femininity of a 
+great Rutherford Cab, and should age well through 2012.</td><td>Estate Reserve</td><td>93</td><td>85</td><td>California</td><td>Rutherford</td><td>Napa</td><td>Cabernet Sauvignon</td><td>Sullivan</td></tr><tr class=""><td>94438</td><td>Germany</td><td>A
+ lush and enormously fruity auslese, this offering features layers of 
+appealingly ripe fruit, ranging from honeyed peaches to tropically 
+luscious mangoes. If it's a bit fat and lacks a touch of zip, it makes 
+up for it with sheer deliciousness.</td><td>Piesporter GoldtrÌ¦pfchen Auslese *** Goldkap</td><td>91</td><td>27</td><td>Mosel-Saar-Ruwer</td><td></td><td></td><td>Riesling</td><td>Bollig-Lehnert</td></tr><tr class=""><td>69928</td><td>Italy</td><td>Oak
+ tonneaux aging renders a rounder, softer and easier-to-drink Brunello. 
+Beautiful layers of aromatic intensity include white mushroom, herbal 
+notes, sweet cedar wood, tobacco, vanilla and cherry. Imported by Tutto 
+Vino.</td><td>I Poggiarelli</td><td>90</td><td>50</td><td>Tuscany</td><td>Brunello di Montalcino</td><td></td><td>Sangiovese</td><td>La Mannella</td></tr><tr class=""><td>117156</td><td>US</td><td>A
+ bit disappointing on the nose; pickle barrel and onion are supported by
+ moderate spice. This is a dark, extracted wine with dusty tannins and a
+ lean feel. Cherry/berry fruit flavors are shy as they compete with 
+tomato, spice and onion before finishing metallic.</td><td>Reserve</td><td>83</td><td>22</td><td>New York</td><td>The Hamptons, Long Island</td><td>Long Island</td><td>Merlot</td><td>WÌ¦lffer</td></tr><tr class=""><td>60642</td><td>France</td><td>Creamy
+ wine, flavored with pears, almonds and crisp acidity. The wine is taut 
+and crisp at the same time. The aftertaste, otherwise fresh, is spoilt 
+by a yeasty bitterness.</td><td>Saint-Meyland Brut</td><td>82</td><td>17</td><td>France Other</td><td>Vin Mousseux</td><td></td><td>White Blend</td><td>Caves de Marsigny</td></tr><tr class=""><td>114278</td><td>US</td><td>A
+ masterpiece from this near perfect vintage. Completely ripe, classic 
+and fresh, with oodles of red cherry and blackcurrant flavors that are 
+generously oaked. Amazingly, the wine is still young and tannic. So 
+beautifully structured, so smooth and polished, firm yet soft, just a 
+gorgeous wine. Hold onto it until at least 2012, if you can.</td><td>Rubicon</td><td>97</td><td>100</td><td>California</td><td>Rutherford</td><td>Napa</td><td>Red Blend</td><td>Niebaum-Coppola</td></tr><tr class=""><td>76671</td><td>Portugal</td><td>A
+ splendid Alvarinho, produced in the southern Vinho Verde region, with 
+ripe creaminess as well as shafts of lime juice and grapefruit. It's 
+ready to drink, while it could age for another year.</td><td></td><td>91</td><td>13</td><td>Minho</td><td></td><td></td><td>Alvarinho</td><td>Aveleda</td></tr><tr class=""><td>81804</td><td>US</td><td>There's
+ something subtlely unripe about this Pinot Noir. It show up in the 
+aroma, with a trace of stewed asparagus. Still, it's dry and elegant, 
+and the flavors of sour cherry candy and sandalwood make it all right.</td><td></td><td>84</td><td>40</td><td>California</td><td>Russian River Valley</td><td>Sonoma</td><td>Pinot Noir</td><td>Martin Ray</td></tr><tr class=""><td>139215</td><td>Argentina</td><td>It
+ doesn't take a great brain to figure out that this is a rocking, 
+beautifully crafted international red wine. Mint, spice and chocolate 
+aromas are dipped in lovely new oak, while the palate is all about bold 
+plum backed by coffee and mocha. Stellar now and shows all signs of a 
+wine that will only get better. Imported by Vias Imports.</td><td>NoemÌ_a</td><td>93</td><td>152</td><td>Other</td><td>RÌ_o Negro Valley</td><td></td><td>Malbec</td><td>Bodega NoemÌ_a de Patagonia</td></tr><tr class=""><td>88413</td><td>Italy</td><td>Known
+ for its panoramic, family-run bed &amp; breakfast, Ca' du RabajÌÊ's 
+base Barbaresco offers a light, bright appearance with aromas of white 
+chocolate, vanilla, orange zest and wild berry. There's smoke, licorice 
+and tar in there as well and the wine offers a tart but drying finish.</td><td></td><td>90</td><td>24</td><td>Piedmont</td><td>Barbaresco</td><td></td><td>Nebbiolo</td><td>Ca' du RabajÌÊ</td></tr><tr class=""><td>145698</td><td>Italy</td><td>Well
+ oaked and woodsy, with some earthy nuances as well as scents of 
+campfire and rubber. This is a youngster with aggressive tannins and 
+sharp edges. With a bit of time it'll soften, leaving a top-flight wine 
+with cherry, citrus rind and a hint of sweet oak.</td><td></td><td>90</td><td>63</td><td>Tuscany</td><td>Brunello di Montalcino</td><td></td><td>Sangiovese</td><td>Il Poggione</td></tr><tr class=""><td>58812</td><td>Italy</td><td>A
+ sweet-smelling Soave with simple aromas of peach, pear and honey 
+presented in a very direct and immediate manner. It's thick and compact 
+on the finish with loads of pineapple-like flavors.</td><td>CÌÊ Visco</td><td>87</td><td>18</td><td>Veneto</td><td>Soave Classico</td><td></td><td>Garganega</td><td>Coffele</td></tr><tr class=""><td>102095</td><td>Italy</td><td>This
+ is a fresh and light Extra Dry style Prosecco with a luminous 
+appearance and tonic bubbles. The aromas recall citrus, white flower and
+ peach and the bubbly wine would taste great as an aperitivo.</td><td>CuvÌ©e Extra Dry</td><td>86</td><td>18</td><td>Veneto</td><td>Conegliano Valdobbiadene Prosecco Superiore</td><td></td><td>Glera</td><td>CarpenÌ¬ Malvolti</td></tr><tr class=""><td>16463</td><td>US</td><td>This
+ isn't a very complex Merlot, but it is textbook if you're looking for 
+soft fruitiness. It has oak-influenced cherry and blackberry flavors, 
+with hints of violets and fruit tea, and is dry and dusty in tannins. 
+Give it more concentration and it would be a star.</td><td></td><td>87</td><td>19</td><td>California</td><td>Alexander Valley</td><td>Sonoma</td><td>Merlot</td><td>Geyser Peak</td></tr><tr class=""><td>124763</td><td>France</td><td>From
+ a small appellation in the north of the MÌ¢connais, producing reds as 
+well as whites, this is initially a mineral, citric wine, which broadens
+ out with toast, fresh acidity and a good weight, with lychee and yellow
+ fruits.</td><td></td><td>85</td><td></td><td>Burgundy</td><td>MÌ¢con-Mancey</td><td></td><td>Chardonnay</td><td>Henri de Villamont</td></tr><tr class=""><td>59192</td><td>US</td><td>There's
+ a Floodgate Vineyard in Anderson Valley that produces very nice Pinot 
+Noirs, but this one says it's from Russian River Valley. This wine is 
+average in quality. It has a fine, silky mouthfeel, with some good 
+cherry flavors, but also a sharp, green touch of mint that's unlikely to
+ age out.</td><td>Floodgate Vineyard Old Vines</td><td>85</td><td>57</td><td>California</td><td>Russian River Valley</td><td>Sonoma</td><td>Pinot Noir</td><td>C. Donatiello</td></tr><tr class=""><td>133613</td><td>Italy</td><td>This
+ Brut SatÌ¬n offers a creamy mouthfeel accented by cheerful tones of 
+yellow fruit, almond and dried apricot. There is crispness here and the 
+tonic bubbles help keep the palate clean for your next sip.</td><td>Brut SatÌ¬n</td><td>90</td><td>39</td><td>Lombardy</td><td>Franciacorta</td><td></td><td>Chardonnay</td><td>Contadi Castaldi</td></tr><tr class=""><td>119093</td><td>US</td><td>Sharp
+ and penetrating, vertically structured, and just now coming out of its 
+youthful shell, the 2006 is beginning to show its long- term aging 
+potential. Compact blueberry and blackberry fruit comes with a hint of 
+black olive; it's ripe, quite firm and wrapped into chewy tannins and 
+natural acids, with a lemony finish.</td><td></td><td>91</td><td>33</td><td>Washington</td><td>Walla Walla Valley (WA)</td><td>Columbia Valley</td><td>Syrah</td><td>Syzygy</td></tr><tr class=""><td>106022</td><td>Chile</td><td>Slightly
+ nutty and salinic on the nose, but mostly it's just neutral. Seems like
+ an early maturing wine, meaning it's soft in its delivery of melon and 
+apple flavors. Dry and a touch pithy on the finish.</td><td>Hacienda Araucano</td><td>85</td><td>12</td><td>Central Valley</td><td></td><td></td><td>Chardonnay</td><td>FranÌ¤ois Lurton</td></tr><tr class=""><td>95772</td><td>US</td><td>Dry,
+ crisp and a bit one-dimensional, this Pinot offers pleasant flavors of 
+cherries, cola, oranges, vanilla and smoke. Seems a bit pricey. Drink 
+now.</td><td>Jack Ranch Vineyard</td><td>85</td><td>30</td><td>California</td><td>Edna Valley</td><td>Central Coast</td><td>Pinot Noir</td><td>Martin &amp; Weyrich</td></tr><tr class=""><td>128216</td><td>Italy</td><td>PajÌ©
+ is a beautiful amphitheater of vines in Barbaresco known for finesse 
+and elegance. This older vintage maintains very good integrity of fruit 
+that is enhanced by layers of black licorice, mineral notes, ash, 
+tobacco and cola. But at the heart of it all is a blast of red cherry. 
+It's a vertical, intense and streamlined wine that is ready to drink 
+now.</td><td>CrichÌÇt PajÌ©</td><td>93</td><td>190</td><td>Piedmont</td><td>Barbaresco</td><td></td><td>Nebbiolo</td><td>Roagna</td></tr><tr class=""><td>91485</td><td>US</td><td>A
+ bit hard in tannins and stinging in acidity, but the lush, ripe flavors
+ make up for it. Offers waves of black and red cherries, cola, licorice 
+and bacon flavors, accented with sweet, smoky oak. Good now, and should 
+develop for a few years.</td><td></td><td>91</td><td>29</td><td>California</td><td>San Luis Obispo County</td><td>Central Coast</td><td>Pinot Noir</td><td>Sinor-LaVallee</td></tr><tr class=""><td>98801</td><td>US</td><td>Made
+ in a lighter, silkier, more accessible style, this is an elegant Pinot 
+Noir that suggests lamb, roast salmon and other upscale dishes. It's 
+easy to drink, but also complex, with intricately layered flavors of 
+cherries, raspberries, red currants, licorice, sassafras, sweet smoky 
+cedar and Asian spices.</td><td>Balletto Vineyard</td><td>93</td><td>40</td><td>California</td><td>Sonoma Coast</td><td>Sonoma</td><td>Pinot Noir</td><td>WesMar</td></tr><tr class=""><td>30536</td><td>US</td><td>This
+ wine made from Muscat Canelli grapes is slightly spritzy and sweet, 
+pungent in apricot fuzz and grass, a mÌ©lange of tropical goodness from 
+there on out. Mango, kiwi and pineapple fill the medium-weight waves of 
+viscous texture, concluding in a vanilla-tinged, light, fresh finish.</td><td>Estate Grown</td><td>86</td><td>25</td><td>California</td><td>Napa Valley</td><td>Napa</td><td>Moscato</td><td>St. SupÌ©ry</td></tr><tr class=""><td>131891</td><td>New Zealand</td><td>This
+ medium-bodied Riesling combines relatively high alcohol (13%) with 
+ample residual sugar to add even greater richness and mouthfeel. But 
+because of its excellent levels of acidity, it doesn't come across as 
+particularly sweet or heavy. Tangerine, apple and spice notes linger 
+elegantly on the finish.</td><td>Rastasburn</td><td>90</td><td>25</td><td>Central Otago</td><td></td><td></td><td>Riesling</td><td>Peregrine</td></tr><tr class=""><td>129416</td><td>Spain</td><td>A
+ bit murky and damp on the nose, with brandied fruit and raisin aromas. 
+The palate is solidly formed, with basic raspberry flavors but not much 
+follow through as the finish shows buttery, soft flavors. Inoffensive 
+but more generic than individual.</td><td></td><td>85</td><td>22</td><td>Northern Spain</td><td>Ribera del Duero</td><td></td><td>Red Blend</td><td>Atalayas de GolbÌÁn</td></tr><tr class=""><td>57896</td><td>US</td><td>Dark
+ and heavy, almost RhÌ«ne-like, with significant tannins that interfere 
+with palate pleasure. There's a deep core of black cherries and lots of 
+oak. Could develop.</td><td>Turner Vineyard</td><td>87</td><td>48</td><td>California</td><td>Sta. Rita Hills</td><td>Central Coast</td><td>Pinot Noir</td><td>A.P. Vin</td></tr><tr class=""><td>110923</td><td>France</td><td>A
+ full, balanced wine with layers of grapefruit and a pure citrus streak.
+ Secondary flavors of almonds and toast add complexity. This is not 
+profound, but it is eminently enjoyable.</td><td>Brut</td><td>89</td><td>50</td><td>Champagne</td><td>Champagne</td><td></td><td>Champagne Blend</td><td>Chartogne-Taillet</td></tr><tr class=""><td>72945</td><td>Italy</td><td>Here's
+ a lovely sparkling wine that offers a floral fragrance of white flowers
+ and tropical fruit. The palate delivers apple, white peach and a hint 
+of almond. It has a creamy texture and a clean, crisp finish. A classic 
+Franciacorta.</td><td>Brut</td><td>91</td><td>29</td><td>Lombardy</td><td>Franciacorta</td><td></td><td>Sparkling Blend</td><td>Il Mosnel</td></tr><tr class=""><td>146614</td><td>US</td><td>Starts
+ out with pleasant notes of supple fruit, but there's too much oak 
+showing at the moment, and the fruit quickly gets buried. Some bitter 
+tannins conclude; give this one extra airtime to soften it up.</td><td>Reserve</td><td>87</td><td>23</td><td>Washington</td><td>Columbia Valley (WA)</td><td>Columbia Valley</td><td>Merlot</td><td>Snoqualmie</td></tr><tr class=""><td>133764</td><td>Germany</td><td>Despite
+ notes of honey and baked apple, this is an almost dry wine, boasting 
+plenty of weight in the mouth. Orangey flavors pick up hints of peach 
+and dried spices, turning stony on the finish.</td><td></td><td>89</td><td>20</td><td>Pfalz</td><td></td><td></td><td>Riesling</td><td>A. Christmann</td></tr><tr class=""><td>59890</td><td>US</td><td>Tough
+ in tannins, austerely dry and thin in fruit, this Cab lacks 
+voluptuousness. You'll find cooked cherry-berry flavors that are swamped
+ by alcohol and tannins.</td><td></td><td>82</td><td>46</td><td>California</td><td>Paso Robles</td><td>Central Coast</td><td>Cabernet Sauvignon</td><td>La Capilla</td></tr><tr class=""><td>50936</td><td>US</td><td>Tastes
+ like ripeness ran away with this wine. The blackberry flavors are 
+explosive, making it taste like jam, while the oak is very strong, 
+almost overpowering in smoky char. Pretty good, but overworked. Drink 
+soon.</td><td>Estate</td><td>88</td><td>45</td><td>California</td><td>Alexander Valley</td><td>Sonoma</td><td>Cabernet Sauvignon</td><td>Blue Rock</td></tr><tr class=""><td>66901</td><td>US</td><td>For
+ those who love the austere, steel and stone flavors of bone-dry 
+Riesling, this will be a welcome discovery. It has plenty of power, 
+citrus rind flavors of fruit and skin, a persistent minerality and a 
+clean, fresh finish.</td><td>Reserve Dry</td><td>89</td><td>21</td><td>Oregon</td><td>Willamette Valley</td><td>Willamette Valley</td><td>Riesling</td><td>Chehalem</td></tr><tr class=""><td>119883</td><td>Chile</td><td>Stalky
+ aromas suggest corn and hayfield more than crisp fruit, and while the 
+palate is lively and acidic, it's also kind of sour and lemony. Finishes
+ with green apple and citrus. Jumpy and scouring.</td><td>Pionero</td><td>83</td><td>9</td><td>CuricÌ_ Valley</td><td></td><td></td><td>Sauvignon Blanc</td><td>MorandÌ©</td></tr><tr class=""><td>132533</td><td>US</td><td>Tastes
+ immature now, with the toasty oak not yet integrated, and the tannins 
+also stick out in all their sticky glory. The fruit is exceptionally 
+ripe, suggesting grilled blackberries and black currants. The suggestion
+ is ageability. Better sometime after mid-2010.</td><td></td><td>90</td><td>75</td><td>California</td><td>Napa Valley</td><td>Napa</td><td>Cabernet Sauvignon</td><td>Phelan Vineyard</td></tr><tr class=""><td>115133</td><td>US</td><td>This
+ is off-dry, roughly 2% residual sugar, and the sweetness is quite 
+evident. It's rather fleshy for a GewÌ_rzt, with honeysuckle, melon and 
+peach fruit. There is a nice spiciness to the aroma as well, and it 
+carries into the midpalate, lending a welcome streak of licorice.</td><td></td><td>87</td><td>9</td><td>Washington</td><td>Columbia Valley (WA)</td><td>Columbia Valley</td><td>GewÌ_rztraminer</td><td>Hogue</td></tr><tr class=""><td>65643</td><td>Portugal</td><td>A
+ fine, elegant wood-aged wine. It has ripe fruits, sweet peach, apricot,
+ mango, while the vanilla of toast lifts all the flavors, adding spicy 
+smoothness. Acidity comes from fresh lime. It could do with some aging, 
+maybe 2ÛÒ3 years.</td><td>Escolha Branco</td><td>89</td><td>19</td><td>Bucelas</td><td></td><td></td><td>Arinto</td><td>Quinta do BoiÌ¤Ì£o</td></tr><tr class=""><td>39970</td><td>Spain</td><td>Quite
+ an oaky wine, with aromas of BBQ, hickory, roasted plum and spice. The 
+body is full but scratchy, with additional oak manifesting itself in the
+ form of baked, rooty, vanilla flavors that override the wine's simple 
+but quiet fruit content. Finishes dark and toasty, with coffee, mocha 
+and vanilla flavors.</td><td>Corona d'AragÌ_n Reserva</td><td>85</td><td>18</td><td>Northern Spain</td><td>CariÌ±ena</td><td></td><td>Red Blend</td><td>Grandes Vinos y ViÌ±edos</td></tr><tr class=""><td>111673</td><td>US</td><td>A
+ new bottling from the winery, made from vines grown 2,000 feet up the 
+mountain that were planted only in 2001. It's far too immature to drink 
+now or anytime soon. The tannins are thick and on lockdown, the 
+blackberry, cassis and cherry fruit all primary and not yet integrated 
+with the oak. But these parts are high-quality and need time to mesh and
+ develop. Best after 2010 through 2016 and beyond.</td><td>Yverdon Vineyard</td><td>93</td><td>70</td><td>California</td><td>Napa</td><td></td><td>Cabernet Sauvignon</td><td>Terra Valentine</td></tr><tr class=""><td>43682</td><td>US</td><td>Made
+ in the modern style of soft, sweet opulence, this is insanely rich, 
+with notes of cherry marmalade, red currant, milk chocolate and sweet 
+cedar flavors that continue onto the long, smooth finish. It's a blend 
+of the traditional red Bordeaux varieties, and while it was aged in 100%
+ new French oak, it's not too oaky. Drink over the next six years for 
+its youthful beauty.</td><td>White Label</td><td>93</td><td>67</td><td>California</td><td>Napa Valley</td><td>Napa</td><td>Bordeaux-style Red Blend</td><td>Les Belles Collines</td></tr><tr class=""><td>124341</td><td>US</td><td>This
+ is a heavy, dense and not very rewarding Pinot Noir at this time. It's 
+soft and full-bodied and very ripe in cherries, blackberries and cola 
+flavors. Could age to mellow sweetness, but it's a gamble.</td><td>Brosseau Vineyard</td><td>86</td><td>44</td><td>California</td><td>Chalone</td><td>Central Coast</td><td>Pinot Noir</td><td>P2</td></tr><tr class=""><td>83955</td><td>France</td><td>A
+ solid and very drinkable wine, the forward black fruit elements are 
+accented by hints of fudge and sweet spice on the finish Drink now.</td><td>RÌ©serve St. Martin</td><td>84</td><td>8</td><td>Languedoc-Roussillon</td><td>Pays d'Oc</td><td></td><td>Merlot</td><td>Les Vignerons de la MÌ©diterranÌ©e</td></tr><tr class=""><td>811</td><td>Greece</td><td>Crisp
+ acidity and a gorgeous, aromatic nose lead on this elegant white. 
+Though mineral-driven, it offers generous white peach and grapefruit 
+flavors that will pair well with fuller-bodied fish. Impressive and 
+versatile.</td><td></td><td>90</td><td>20</td><td>Santorini</td><td></td><td></td><td>Assyrtiko</td><td>Santo Wines</td></tr><tr class=""><td>81207</td><td>Chile</td><td>This smells horsy, feral and herbal. Dry, rock-hard tannins make it feel rugged in the mouth, and it's already five years old.</td><td></td><td>85</td><td>80</td><td>Cachapoal Valley</td><td></td><td></td><td>Cabernet Blend</td><td>AltaÌør</td></tr><tr class=""><td>131578</td><td>France</td><td>The
+ extra amount of clay in the soil of this vineyard lends weight, 
+richness and roundness. At the same time, it has fresh lime, an open 
+character and a soft structure.</td><td>Vaucoupin Premier Cru</td><td>88</td><td>42</td><td>Burgundy</td><td>Chablis</td><td></td><td>Chardonnay</td><td>Domaine Grossot</td></tr><tr class=""><td>31628</td><td>Argentina</td><td>This
+ warm-weather Viognier is fleshy and chunky on the bouquet, with generic
+ white-fruit aromas that suggest gardenias. A plump palate is low on 
+acid and heavy in weight; flavors of melon and green herbs finish soft 
+and could turn flabby in a short time.</td><td>Reserva</td><td>84</td><td>12</td><td>Mendoza Province</td><td>Uco Valley</td><td></td><td>Viognier</td><td>Finca El Origen</td></tr><tr class=""><td>103920</td><td>Italy</td><td>Here's
+ an oak-driven Sauvignon Blanc from the 2004 vintage with a thick layer 
+of toast, nut and campfire that play a leading role and leave little 
+room for the wine's natural fruit and floral tones. Those carpentry 
+notes also dominate the mouthfeel and add a piquant touch of exotic 
+spice on the close. That said, this white wine has held very well over 
+the years.</td><td>Ronco del Re</td><td>87</td><td>55</td><td>Central Italy</td><td>ForlÌÂ</td><td></td><td>Sauvignon Blanc</td><td>Castelluccio</td></tr><tr class=""><td>70740</td><td>Spain</td><td>CUNE
+ is a throwback bodega whose wines won't appeal to followers of the new 
+wave. And since I consider myself a backer of the modern style, I found 
+this wine too obtuse, funky and borderline dirty to rate higher. It's 
+full of mossy, stewy flavors and the feel is heavy. Traditionalist, 
+however, may find it worthy of greater praise.</td><td>Imperial Gran Reserva</td><td>84</td><td>60</td><td>Northern Spain</td><td>Rioja</td><td></td><td>Tempranillo</td><td>CVNE</td></tr><tr class=""><td>143226</td><td>US</td><td>Offers
+ lush, intricate flavors of blackberries, cassis, roasted coffeebean, 
+sweet milk chocolate and toasty oak in a soft, gentle wine that has 
+complexity and interest. Not an ager, but a real beauty.</td><td>Winemaker's Reserve</td><td>91</td><td>35</td><td>California</td><td>Alexander Valley</td><td>Sonoma</td><td>Cabernet Sauvignon</td><td>ChÌ¢teau Souverain</td></tr><tr class=""><td>47010</td><td>Australia</td><td>Ripe
+ indeed, with confectioner's sugar, vanilla ice cream and honey aromas 
+that lead to a light-to-medium-bodied palate with some disjointed oak 
+notes and a slightly oily texture. Short but pleasant finish of figs and
+ candied lemons. Drink up.</td><td></td><td>84</td><td>11</td><td>Australia Other</td><td>South Eastern Australia</td><td></td><td>Chardonnay</td><td>Madison Ridge</td></tr><tr class=""><td>30763</td><td>France</td><td>Tropical
+ fruit aromas lead to a peach- and apricot-flavored palate. It shows 
+old-vine concentration, spice from having aged in wood and a generous, 
+velvet-like texture that is balanced by a fine shot of lemony acidity. 
+Age this for 4ÛÒ5 years.</td><td>Vieilles Vignes</td><td>92</td><td>62</td><td>Burgundy</td><td>Meursault</td><td></td><td>Chardonnay</td><td>Roche de Bellene</td></tr><tr class=""><td>37483</td><td>France</td><td>Produced
+ by the winemaking team of ChÌ¢teau Giscours in Margaux, this is 
+impressive for a simple Bordeaux. It has weight, rich blackberry fruits,
+ structure and concentration. It could even age.</td><td></td><td>89</td><td></td><td>Bordeaux</td><td>Bordeaux</td><td></td><td>Bordeaux-style Red Blend</td><td>Petite SirÌ¬ne</td></tr><tr class=""><td>137840</td><td>Italy</td><td>Typical
+ of this hot vintage, La Fiammenga is already quite mature. The fruit is
+ on the plummy side, it has the added complexity of licorice and road 
+tar. On the palate, it is soft and rich but it does need a touch of acid
+ to liven it up. Imported by Sapori Italiani Inc.</td><td></td><td>87</td><td>28</td><td>Piedmont</td><td>Barbaresco</td><td></td><td>Nebbiolo</td><td>La Fiammenga</td></tr><tr class=""><td>117908</td><td>US</td><td>The
+ estate bottling is 100% SÌ©millon and tastes a bit riper and more 
+peachy than the Columbia Valley bottling, though perhaps less nuanced. 
+Barrel fermented in both new and second year French oak, it adds 
+honeysuckle, sweet apple and a hint of mint to the sweet fruit.</td><td>Seven Hills Vineyard Estate</td><td>91</td><td>20</td><td>Washington</td><td>Walla Walla Valley (WA)</td><td>Columbia Valley</td><td>SÌ©millon</td><td>L'Ecole No. 41</td></tr><tr class=""><td>141797</td><td>Chile</td><td>Not
+ the most Syrah-like wine you're likely to encounter, but as a generic 
+red it's juicy, fruity and tasty. The balance is fine and the fruit 
+weighs in solid and proper. Complete but lacking individuality.</td><td>Barrica Selection</td><td>85</td><td>15</td><td>Maipo Valley</td><td></td><td></td><td>Syrah</td><td>Santa Carolina</td></tr><tr class=""><td>129536</td><td>France</td><td>This
+ is all tannin, bitter chocolate and a dense texture. It seems to be 
+drying out as the fruit goes, while there are few signs of softening. It
+ suffers from the heat of 2003.</td><td>Tradition</td><td>82</td><td></td><td>Bordeaux</td><td>Premieres CÌ«tes de Bordeaux</td><td></td><td>Bordeaux-style Red Blend</td><td>ChÌ¢teau Cabredon</td></tr><tr class=""><td>4180</td><td>US</td><td>Of
+ all the 2012 releases from Mannina, this is the most dense, dark and 
+substantial. Cassis and black cherry fruit is set against a stiff streak
+ of char and coffee, backed with firm, ripe tannins. The length and 
+balance are just right for ripe fruit from young vines.</td><td></td><td>90</td><td>30</td><td>Washington</td><td>Walla Walla Valley (WA)</td><td>Columbia Valley</td><td>Cabernet Sauvignon</td><td>Mannina Cellars</td></tr><tr class=""><td>137681</td><td>Portugal</td><td>A
+ success in the sweeter Vinho Verde category. There is pleasant 
+softness, flavors of green berries, grapefruit with sugar and freshness.</td><td>Santola</td><td>84</td><td>6</td><td>Vinho Verde</td><td></td><td></td><td>Portuguese White</td><td>Messias</td></tr><tr class=""><td>107120</td><td>Germany</td><td>This
+ wonderful auslese offers volume and richness without weightÛÓit's a 
+sort of fluffy custard in texture, loaded with funky, leesy notes on the
+ nose but also with passion fruit, green apple and pineapple notes on 
+the palate. Yes, it's sweet, but the acids provide beautiful balance on 
+the finish. Drink nowÛÒ2025.</td><td>Atsberg Auslese 149</td><td>92</td><td>58</td><td>Mosel</td><td></td><td></td><td>Riesling</td><td>Maximin GrÌ_nhÌ_user</td></tr><tr class=""><td>150557</td><td>Italy</td><td>The
+ modest cherry, dark berry and black tea notes of this light wine show 
+tell-tale orange-peel notes of decline. This feels just too thin and 
+tired at an early age.</td><td></td><td>81</td><td>15</td><td>Tuscany</td><td>Chianti Classico</td><td></td><td>Sangiovese</td><td>Valiano</td></tr><tr class=""><td>14408</td><td>Italy</td><td>With
+ its thick density and slightly off-dry flavors of raisin, cassis, honey
+ and liquid smoke, this would pair with hearty country pÌ¢tÌ© or meat 
+terrines. Its alcohol, mild tannins and fresh-fruit finish would also 
+work with those fatty foods.</td><td>Zane</td><td>88</td><td>22</td><td>Veneto</td><td>Valpolicella Classico Superiore Ripasso</td><td></td><td>Corvina, Rondinella, Molinara</td><td>Carlo Boscaini</td></tr><tr class=""><td>8670</td><td>Turkey</td><td>A
+ nose of strawberry and mint with a whiff of petrol sets the scene for 
+flavors of cassis, cherry preserves, peach and eucalyptus that never 
+quite coalesce. Soft tannins drop off immediately after a burst of white
+ peach at the finish.</td><td></td><td>86</td><td>15</td><td>Turkey</td><td></td><td></td><td>Kuntra</td><td>ÌàamlibaÙ</td></tr><tr class=""><td>146870</td><td>South Africa</td><td>A
+ fairly big wine, with big tannins and high acidity, that lets its 
+flavors do the talking. Lush purple fruit and coffee is streaked with 
+lemon and mineral. A bit tart on the finish, but with food this is 
+enjoyable for its swagger.</td><td></td><td>87</td><td>20</td><td>South Africa</td><td></td><td></td><td>Cabernet Sauvignon</td><td>The Berrio</td></tr><tr class=""><td>59388</td><td>New Zealand</td><td>This
+ attractively priced Pinot Noir combines fruit from Nelson and 
+Marlborough to create a fresh, snappy blend of plum and black cherry 
+fruit. Some slightly briary-herbal notes and silky tannins add interest,
+ smoothed out by hints of brown sugar and baking spices. Drink 
+nowÛÒ2012.</td><td></td><td>88</td><td>20</td><td>New Zealand</td><td></td><td></td><td>Pinot Noir</td><td>Catalina Sounds</td></tr><tr class=""><td>6168</td><td>Moldova</td><td>This
+ 100% Feteasca Neagra has aromas of fresh strawberry and red plum. It is
+ soft on entry into the mouth and has flavors of dried cherries, cloves 
+and prunes.</td><td></td><td>88</td><td>12</td><td>Moldova</td><td></td><td></td><td>Feteasca Neagra</td><td>Vinaria din Vale</td></tr><tr class=""><td>128257</td><td>Bulgaria</td><td>This
+ refreshing ChardonnayÛÓwith aromas of grapefruit and lemon and flavors
+ of zesty grapefruit and lemon zestÛÓis anchored by a weight that gives
+ it balance. Overall, the wine finds a great middle ground and is food 
+friendly.</td><td></td><td>84</td><td>8</td><td>Bulgaria</td><td></td><td></td><td>Chardonnay</td><td>Targovishte</td></tr><tr class=""><td>116551</td><td>US</td><td>Tasted
+ in October, 2007, the wine was mute, offering little aromatically 
+except for teasing notes of blackberries and oak. That shyness extended 
+to the taste, where strong, hard tannins provide an almost impenetrable 
+coat of armor to what's inside. But right down the middle of the palate 
+is a deep, intensely powerful stream of perfectly ripened cassis that's 
+all the proof you need of ageability. This is a magnificently structured
+ young wine, reminiscent of a fine young Pauillac. Best after 2012, and 
+should have another decade after that, at least.</td><td>Insignia</td><td>97</td><td>200</td><td>California</td><td>Napa Valley</td><td>Napa</td><td>Bordeaux-style Red Blend</td><td>Joseph Phelps</td></tr><tr class=""><td>116564</td><td>US</td><td>It's
+ impossible for a Cabernet to be richer, more opulent or more 
+hedonistically stunning on opening than this beauty from veteran Phelps.
+ Admittedly, there are significant tannins. But the wine delivers a 
+broadside of the sweetest, ripest cassis fruit imaginable, along with 
+richly toasted oak. It's the kind of Cab that will dazzle even an 
+amateur. Absolutely gorgeous now, with immaculate elegance. About the 
+only criticism you can offer is that the structure is a bit obvious, and
+ ageability may be limited.</td><td>Backus</td><td>95</td><td>200</td><td>California</td><td>Oakville</td><td>Napa</td><td>Cabernet Sauvignon</td><td>Joseph Phelps</td></tr><tr class=""><td>74057</td><td>US</td><td>The
+ former basketball star's initial release immediately establishes itself
+ among the elite Cabernets of Napa Valley. Made from mountain vineyards 
+on Atlas Peak and benches in the Rutherford appellation, it combines 
+intensity with elegance. Bursts with upfront, delicious blackberry, 
+crÌ¬me de cassis and dark chocolate flavors that are wildly sweet on the
+ midpalate, but then finish thoroughly dry. Structure comes by way of a 
+tangy minerality and finely laced tannins. This is one of those wines 
+that is softly decadent from start to finish, although it's probably not
+ one to hold much beyond six years.</td><td>Family Reserve</td><td>97</td><td>625</td><td>California</td><td>Napa Valley</td><td>Napa</td><td>Cabernet Sauvignon</td><td>Yao Ming</td></tr><tr class=""><td>83298</td><td>US</td><td>Made
+ in the Lokoya style, which is darkly colored, full bodied, tannic and 
+dense in mountain fruit. A spicy oak tone joins with massive blackberry,
+ cassis and violet flavors to make this wine delicious from the start. 
+It's very tannic and needs a great deal of time. Begin to enjoy this 
+wine in 2016, and it should go far longer than that.</td><td></td><td>94</td><td>350</td><td>California</td><td>Diamond Mountain District</td><td>Napa</td><td>Cabernet Sauvignon</td><td>Lokoya</td></tr><tr class=""><td>135895</td><td>US</td><td>A
+ disappointing wine. Tastes frankly unripe, with a vegetal undertow to 
+the blackberries and cherries. The thinness of fruit accentuates the 
+alcohol which, although only 14.6%, comes through as hot. The grapes 
+came from the cool Coombsville area, and the wine is 100% Cabernet.</td><td></td><td>84</td><td>225</td><td>California</td><td>Napa Valley</td><td>Napa</td><td>Cabernet Sauvignon</td><td>Meteor</td></tr><tr class=""><td>118377</td><td>Argentina</td><td>Granular,
+ raisiny and heavy on the nose, with jammy blackberry aromas. The palate
+ then hits with a thud; it's chunky and low in acidity, which yields a 
+thick flavor set of prune and coffee. Better once it breathes, but it's 
+still a bit too sticky and syrupy for our liking.</td><td>Reserva</td><td>85</td><td>20</td><td>Mendoza Province</td><td>Mendoza</td><td></td><td>Malbec</td><td>Bodega Norton</td></tr><tr class=""><td>119041</td><td>Argentina</td><td>The
+ ÛÏoakÛ in the name is appropriate because this one is draped in 
+unctuous, heavy, burnt aromas. The nose is a cloud of coconut, char and 
+woody blackberry, while the syrupy palate is all sweet black plum, 
+carob, mint and resin. Quite oaky and thick for a value-priced wine.</td><td>Vika Oak</td><td>83</td><td>12</td><td>Other</td><td>San Juan</td><td></td><td>Malbec</td><td>Bodegas La Guarda</td></tr><tr class=""><td>132683</td><td>Argentina</td><td>Jammy
+ red-fruit aromas mixed with buttery oak make for a simple, sappy nose. 
+There's more butter on the palate in addition to solid blackberry 
+flavors. It finishes round but short, with yet another wave of barrel. A
+ very good wine but not one that wows.</td><td>Reserva</td><td>87</td><td>18</td><td>Mendoza Province</td><td>LujÌÁn de Cuyo</td><td></td><td>Malbec</td><td>Bodega Norton</td></tr><tr class=""><td>44070</td><td>Argentina</td><td>Rubbery
+ and warm on the nose, with earthy plum and blackberry aromas. The 
+palate is full and bouncy, with appropriate plum, berry and cassis 
+flavors. Nice for standard New World Cab, with fig, chocolate and no 
+buttery, sloppy oak.</td><td></td><td>86</td><td>10</td><td>Mendoza Province</td><td>Mendoza</td><td></td><td>Cabernet Sauvignon</td><td>Bodega Norton</td></tr><tr class=""><td>129117</td><td>Argentina</td><td>Colorful
+ but low in pulse, with jammy, pasty aromas sitting in front of a bulky,
+ one-dimensional palate that offers standard blackberry fruit and mildly
+ herbal side flavors. Has just enough acidity to keep it pumping, but as
+ a whole it comes across a little too heavy and jammy compared to 
+previous years.</td><td>A Lisa</td><td>85</td><td>25</td><td>Other</td><td>RÌ_o Negro Valley</td><td></td><td>Malbec</td><td>Bodega NoemÌ_a de Patagonia</td></tr></tbody></table></div></div></div></main><footer class="footer"><div class="container" style="width: 310px;"><div style="display: flex; justify-content: space-between;"><a href="https://platform.stratascratch.com/terms-and-conditions">Terms and Conditions</a><span>•</span><a href="https://platform.stratascratch.com/privacy-policy">Privacy Policy</a></div></div></footer></div><script type="text/javascript" src="winemag_files/runtimeapp.js"></script><script type="text/javascript" src="winemag_files/app.js"></script><script type="text/javascript" src="winemag_files/styles.js"></script><script type="text/javascript" src="winemag_files/app_002.js"></script><div class="ReactModalPortal"></div><iframe name="__privateStripeMetricsController8550" allowtransparency="true" scrolling="no" allow="payment *" src="winemag_files/m-outer-08a1fefa46cfc8cc94fc477ddcdb0555.html" aria-hidden="true" tabindex="-1" style="border: medium none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;" frameborder="0"></iframe></body></html>

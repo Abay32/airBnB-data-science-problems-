@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="ms_employee_salary_files/css.css" rel="stylesheet"><link href="ms_employee_salary_files/jquery.css" rel="stylesheet"><title>StrataScratch</title><script type="text/javascript" async="" src="ms_employee_salary_files/analytics.js"></script><script type="text/javascript" async="" src="ms_employee_salary_files/js_002.js"></script><script>!function(n,u){n._rwq=u,n[u]=n[u]||function(){(n[u].q=n[u].q||[]).push(arguments)}}(window,"rewardful")</script><script async="" src="ms_employee_salary_files/rw.js" data-rewardful="509d71"></script><script async="" src="ms_employee_salary_files/js.js"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-115949776-1")</script><link rel="shortcut icon" href="https://platform.stratascratch.com/fav.png"><link href="ms_employee_salary_files/styles90c1f1e92fe3ca728ca6.css" rel="stylesheet"><style>.strata-editor-dragbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12px;
+  cursor: row-resize;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9FZGl0b3JEcmFnQmFyLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQWE7RUFDYix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLFlBQVk7RUFDWixrQkFBa0I7QUFDcEIiLCJzb3VyY2VzQ29udGVudCI6WyIuc3RyYXRhLWVkaXRvci1kcmFnYmFyIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGhlaWdodDogMTJweDtcbiAgY3Vyc29yOiByb3ctcmVzaXplO1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>.strata-editor-container {
+  position: relative;
+  background-color: #f5f5f5;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.strata-editor-container .ace_editor {
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333333;
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.ace-github .ace_print-margin {
+  background: transparent !important;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9Db2RlRWRpdG9yLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLHNCQUFzQjtFQUN0QixtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSx1QkFBdUI7RUFDdkIscUJBQXFCO0VBQ3JCLHFCQUFxQjtFQUNyQixjQUFjO0VBQ2QsOERBQThEO0FBQ2hFOztBQUVBO0VBQ0Usa0NBQWtDO0FBQ3BDIiwic291cmNlc0NvbnRlbnQiOlsiLnN0cmF0YS1lZGl0b3ItY29udGFpbmVyIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjVmNWY1O1xuICBib3JkZXItcmFkaXVzOiAycHg7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG4gIG1hcmdpbi1ib3R0b206IDFyZW07XG59XG5cbi5zdHJhdGEtZWRpdG9yLWNvbnRhaW5lciAuYWNlX2VkaXRvciB7XG4gIGxpbmUtaGVpZ2h0OiAxLjQyODU3MTQzO1xuICB3b3JkLWJyZWFrOiBicmVhay1hbGw7XG4gIHdvcmQtd3JhcDogYnJlYWstd29yZDtcbiAgY29sb3I6ICMzMzMzMzM7XG4gIGZvbnQtZmFtaWx5OiBNZW5sbywgTW9uYWNvLCBDb25zb2xhcywgJ0NvdXJpZXIgTmV3JywgbW9ub3NwYWNlO1xufVxuXG4uYWNlLWdpdGh1YiAuYWNlX3ByaW50LW1hcmdpbiB7XG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50ICFpbXBvcnRhbnQ7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.strata-editor-extension {
+  color: #fff;
+  background-color: #ccc;
+}
+
+.strata-editor-caption-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 9px;
+  font-size: 1rem;
+}
+
+.strata-editor-dataset-tables {
+  border-radius: 0.25rem;
+  padding: 0 0.5rem;
+  background-color: #b7e9f0;
+  color: #249cac;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9FZGl0b3JDYXB0aW9uQmFyLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQVc7RUFDWCxzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxhQUFhO0VBQ2IsOEJBQThCO0VBQzlCLG1CQUFtQjtFQUNuQixnQkFBZ0I7RUFDaEIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLHNCQUFzQjtFQUN0QixpQkFBaUI7RUFDakIseUJBQXlCO0VBQ3pCLGNBQWM7QUFDaEIiLCJzb3VyY2VzQ29udGVudCI6WyIuc3RyYXRhLWVkaXRvci1leHRlbnNpb24ge1xuICBjb2xvcjogI2ZmZjtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2NjYztcbn1cblxuLnN0cmF0YS1lZGl0b3ItY2FwdGlvbi1iYXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIHBhZGRpbmc6IDJweCA5cHg7XG4gIGZvbnQtc2l6ZTogMXJlbTtcbn1cblxuLnN0cmF0YS1lZGl0b3ItZGF0YXNldC10YWJsZXMge1xuICBib3JkZXItcmFkaXVzOiAwLjI1cmVtO1xuICBwYWRkaW5nOiAwIDAuNXJlbTtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2I3ZTlmMDtcbiAgY29sb3I6ICMyNDljYWM7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.strata-editor-spin {
+  animation: spin 1.5s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9RdWVyeUJ1dHRvbi5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxvQ0FBb0M7QUFDdEM7O0FBRUE7RUFDRTtJQUNFLHVCQUF1QjtJQUN2Qix1QkFBdUI7RUFDekI7RUFDQTtJQUNFLHlCQUF5QjtJQUN6Qix5QkFBeUI7RUFDM0I7QUFDRiIsInNvdXJjZXNDb250ZW50IjpbIi5zdHJhdGEtZWRpdG9yLXNwaW4ge1xuICBhbmltYXRpb246IHNwaW4gMS41cyBpbmZpbml0ZSBsaW5lYXI7XG59XG5cbkBrZXlmcmFtZXMgc3BpbiB7XG4gIGZyb20ge1xuICAgIHRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xuICAgIHRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xuICB9XG4gIHRvIHtcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpO1xuICAgIHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7XG4gIH1cbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><style>.strata-editor-buttons-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.strata-editor-hotkey-message {
+  margin-top: 0.25rem;
+  color: rgb(130, 130, 130);
+  font-size: 0.8125rem;
+  text-align: right;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9RdWVyeUJ1dHRvbnNTZWN0aW9uLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsbUJBQW1CO0VBQ25CLFdBQVc7QUFDYjs7QUFFQTtFQUNFLG1CQUFtQjtFQUNuQix5QkFBeUI7RUFDekIsb0JBQW9CO0VBQ3BCLGlCQUFpQjtBQUNuQiIsInNvdXJjZXNDb250ZW50IjpbIi5zdHJhdGEtZWRpdG9yLWJ1dHRvbnMtd3JhcHBlciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGdhcDogMC41cmVtO1xufVxuXG4uc3RyYXRhLWVkaXRvci1ob3RrZXktbWVzc2FnZSB7XG4gIG1hcmdpbi10b3A6IDAuMjVyZW07XG4gIGNvbG9yOiByZ2IoMTMwLCAxMzAsIDEzMCk7XG4gIGZvbnQtc2l6ZTogMC44MTI1cmVtO1xuICB0ZXh0LWFsaWduOiByaWdodDtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><style>.strata-editor-result-table {
+  font-size: 1rem;
+}
+
+.table-striped.strata-editor-result-table tr.wrong {
+  background-color: #ffb9b9;
+}
+
+.table-striped.strata-editor-result-table tr.correct {
+  background-color: #90ee90;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9RdWVyeVJlc3VsdFRhYmxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSx5QkFBeUI7QUFDM0I7O0FBRUE7RUFDRSx5QkFBeUI7QUFDM0IiLCJzb3VyY2VzQ29udGVudCI6WyIuc3RyYXRhLWVkaXRvci1yZXN1bHQtdGFibGUge1xuICBmb250LXNpemU6IDFyZW07XG59XG5cbi50YWJsZS1zdHJpcGVkLnN0cmF0YS1lZGl0b3ItcmVzdWx0LXRhYmxlIHRyLndyb25nIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmYjliOTtcbn1cblxuLnRhYmxlLXN0cmlwZWQuc3RyYXRhLWVkaXRvci1yZXN1bHQtdGFibGUgdHIuY29ycmVjdCB7XG4gIGJhY2tncm91bmQtY29sb3I6ICM5MGVlOTA7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.strata-editor-output-title {
+  margin-top: 1rem;
+  font-size: 1.1875rem;
+  color: rgb(130, 130, 130);
+}
+
+.white-space-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.strata-editor-console-output {
+  padding: 1rem 2rem;
+}
+
+.strata-editor-alert {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+}
+
+.strata-editor-alert.info {
+  background-color: #b7e9f0;
+  color: #249cac;
+}
+
+.strata-editor-alert.warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.strata-editor-alert.danger {
+  background-color: #ffb9b9;
+  color: #c60201;
+}
+
+.strata-editor-results-table-wrapper {
+  max-height: 24rem;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.strata-editor-results-table-wrapper table {
+  margin-bottom: 0;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9FeGVjdXRpb25SZXN1bHRzLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQixvQkFBb0I7RUFDcEIseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UscUJBQXFCO0FBQ3ZCOztBQUVBO0VBQ0Usa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0Usd0JBQXdCO0VBQ3hCLG1CQUFtQjtFQUNuQixlQUFlO0VBQ2Ysc0JBQXNCO0FBQ3hCOztBQUVBO0VBQ0UseUJBQXlCO0VBQ3pCLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSx5QkFBeUI7RUFDekIsY0FBYztBQUNoQjs7QUFFQTtFQUNFLHlCQUF5QjtFQUN6QixjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLGNBQWM7RUFDZCxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEIiLCJzb3VyY2VzQ29udGVudCI6WyIuc3RyYXRhLWVkaXRvci1vdXRwdXQtdGl0bGUge1xuICBtYXJnaW4tdG9wOiAxcmVtO1xuICBmb250LXNpemU6IDEuMTg3NXJlbTtcbiAgY29sb3I6IHJnYigxMzAsIDEzMCwgMTMwKTtcbn1cblxuLndoaXRlLXNwYWNlLXByZS13cmFwIHtcbiAgd2hpdGUtc3BhY2U6IHByZS13cmFwO1xufVxuXG4uc3RyYXRhLWVkaXRvci1jb25zb2xlLW91dHB1dCB7XG4gIHBhZGRpbmc6IDFyZW0gMnJlbTtcbn1cblxuLnN0cmF0YS1lZGl0b3ItYWxlcnQge1xuICBwYWRkaW5nOiAwLjc1cmVtIDEuMjVyZW07XG4gIG1hcmdpbi1ib3R0b206IDFyZW07XG4gIGZvbnQtc2l6ZTogMXJlbTtcbiAgYm9yZGVyLXJhZGl1czogMC4yNXJlbTtcbn1cblxuLnN0cmF0YS1lZGl0b3ItYWxlcnQuaW5mbyB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNiN2U5ZjA7XG4gIGNvbG9yOiAjMjQ5Y2FjO1xufVxuXG4uc3RyYXRhLWVkaXRvci1hbGVydC53YXJuaW5nIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjNjZDtcbiAgY29sb3I6ICM4NTY0MDQ7XG59XG5cbi5zdHJhdGEtZWRpdG9yLWFsZXJ0LmRhbmdlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmI5Yjk7XG4gIGNvbG9yOiAjYzYwMjAxO1xufVxuXG4uc3RyYXRhLWVkaXRvci1yZXN1bHRzLXRhYmxlLXdyYXBwZXIge1xuICBtYXgtaGVpZ2h0OiAyNHJlbTtcbiAgb3ZlcmZsb3c6IGF1dG87XG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XG59XG5cbi5zdHJhdGEtZWRpdG9yLXJlc3VsdHMtdGFibGUtd3JhcHBlciB0YWJsZSB7XG4gIG1hcmdpbi1ib3R0b206IDA7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.strata-editor-code-widget {
+  margin-bottom: 2rem;
+}
+
+.strata-editor-question-link {
+  font-size: 1rem;
+}
+
+.strata-editor-error-inset {
+  position: absolute;
+  inset: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f2f2f2;
+  font-weight: 500;
+  z-index: 5;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9Db2RlRWRpdG9yV2lkZ2V0LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIseUJBQXlCO0VBQ3pCLGdCQUFnQjtFQUNoQixVQUFVO0FBQ1oiLCJzb3VyY2VzQ29udGVudCI6WyIuc3RyYXRhLWVkaXRvci1jb2RlLXdpZGdldCB7XG4gIG1hcmdpbi1ib3R0b206IDJyZW07XG59XG5cbi5zdHJhdGEtZWRpdG9yLXF1ZXN0aW9uLWxpbmsge1xuICBmb250LXNpemU6IDFyZW07XG59XG5cbi5zdHJhdGEtZWRpdG9yLWVycm9yLWluc2V0IHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBpbnNldDogMXJlbTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2YyZjJmMjtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgei1pbmRleDogNTtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><script src="ms_employee_salary_files/v3.js"></script></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><header class="top" style="position: relative; z-index: 1000;"><nav class="navbar-static-top navbar-inverse navbar navbar-expand-md navbar-light"><a href="https://stratascratch.com/" class="navbar-brand"><img src="ms_employee_salary_files/superset-logo.png" alt="Superset Logo" width="126"></a><button aria-controls="basic-navbar-nav" type="button" aria-label="Toggle navigation" class="navbar-toggler collapsed"><span class="navbar-toggler-icon"></span></button><div class="navbar-collapse collapse" id="basic-navbar-nav"><div class="mr-auto navbar-nav"><li><a href="https://platform.stratascratch.com/coding" data-rb-event-key="/coding" class="navbar-marging nav-link">Coding Questions</a></li><li><a href="https://platform.stratascratch.com/technical" data-rb-event-key="/technical" class="navbar-marging nav-link">Non-coding Questions</a></li></div><div class="navbar-nav"><li><a href="https://platform.stratascratch.com/pricing" data-rb-event-key="/pricing" class="navbar-marging nav-link"><i class="fa fa-money"></i> Pricing</a></li><li class="float-right"><div class="dropdown"><a href="" class="navbar-marging nav-link"><i class="fa fa-user"></i> Profile</a></div></li><li class="float-right"><a href="#" class="navbar-marging nav-link" role="button"><i class="fa fa-fw fa-sign-out"></i> Logout</a></li></div></div></nav></header><main><div style="margin-bottom: 40px; margin-top: 40px;" class="justify-content-md-center row"><div class="col-md-10"><div style="width: 100%; height: 20px; overflow-x: scroll;"><div style="width: 0px; height: 20px;"></div></div><div class="scroll-horizontal"><p class="text-grey">Your Solution Output:</p><table class="table table-bordered table-striped fixed-width strata-editor-result-table "><thead><tr><th>id</th><th>first_name</th><th>last_name</th><th>salary</th><th>department_id</th></tr></thead><tbody id="myTable"><tr class=""><td>1</td><td>Todd</td><td>Wilson</td><td>110000</td><td>1006</td></tr><tr class=""><td>1</td><td>Todd</td><td>Wilson</td><td>106119</td><td>1006</td></tr><tr class=""><td>2</td><td>Justin</td><td>Simon</td><td>128922</td><td>1005</td></tr><tr class=""><td>2</td><td>Justin</td><td>Simon</td><td>130000</td><td>1005</td></tr><tr class=""><td>3</td><td>Kelly</td><td>Rosario</td><td>42689</td><td>1002</td></tr><tr class=""><td>4</td><td>Patricia</td><td>Powell</td><td>162825</td><td>1004</td></tr><tr class=""><td>4</td><td>Patricia</td><td>Powell</td><td>170000</td><td>1004</td></tr><tr class=""><td>5</td><td>Sherry</td><td>Golden</td><td>44101</td><td>1002</td></tr><tr class=""><td>6</td><td>Natasha</td><td>Swanson</td><td>79632</td><td>1005</td></tr><tr class=""><td>6</td><td>Natasha</td><td>Swanson</td><td>90000</td><td>1005</td></tr><tr class=""><td>7</td><td>Diane</td><td>Gordon</td><td>74591</td><td>1002</td></tr><tr class=""><td>8</td><td>Mercedes</td><td>Rodriguez</td><td>61048</td><td>1005</td></tr><tr class=""><td>9</td><td>Christy</td><td>Mitchell</td><td>137236</td><td>1001</td></tr><tr class=""><td>9</td><td>Christy</td><td>Mitchell</td><td>140000</td><td>1001</td></tr><tr class=""><td>9</td><td>Christy</td><td>Mitchell</td><td>150000</td><td>1001</td></tr><tr class=""><td>10</td><td>Sean</td><td>Crawford</td><td>182065</td><td>1006</td></tr><tr class=""><td>10</td><td>Sean</td><td>Crawford</td><td>190000</td><td>1006</td></tr><tr class=""><td>11</td><td>Kevin</td><td>Townsend</td><td>166861</td><td>1002</td></tr><tr class=""><td>12</td><td>Joshua</td><td>Johnson</td><td>123082</td><td>1004</td></tr><tr class=""><td>13</td><td>Julie</td><td>Sanchez</td><td>185663</td><td>1001</td></tr><tr class=""><td>13</td><td>Julie</td><td>Sanchez</td><td>200000</td><td>1001</td></tr><tr class=""><td>13</td><td>Julie</td><td>Sanchez</td><td>210000</td><td>1001</td></tr><tr class=""><td>14</td><td>John</td><td>Coleman</td><td>152434</td><td>1001</td></tr><tr class=""><td>15</td><td>Anthony</td><td>Valdez</td><td>96898</td><td>1001</td></tr><tr class=""><td>16</td><td>Briana</td><td>Rivas</td><td>151668</td><td>1005</td></tr><tr class=""><td>17</td><td>Jason</td><td>Burnett</td><td>42525</td><td>1006</td></tr><tr class=""><td>18</td><td>Jeffrey</td><td>Harris</td><td>14491</td><td>1002</td></tr><tr class=""><td>18</td><td>Jeffrey</td><td>Harris</td><td>20000</td><td>1002</td></tr><tr class=""><td>19</td><td>Michael</td><td>Ramsey</td><td>63159</td><td>1003</td></tr><tr class=""><td>20</td><td>Cody</td><td>Gonzalez</td><td>112809</td><td>1004</td></tr><tr class=""><td>21</td><td>Stephen</td><td>Berry</td><td>123617</td><td>1002</td></tr><tr class=""><td>22</td><td>Brittany</td><td>Scott</td><td>162537</td><td>1002</td></tr><tr class=""><td>23</td><td>Angela</td><td>Williams</td><td>100875</td><td>1004</td></tr><tr class=""><td>24</td><td>William</td><td>Flores</td><td>142674</td><td>1003</td></tr><tr class=""><td>25</td><td>Pamela</td><td>Matthews</td><td>57944</td><td>1005</td></tr><tr class=""><td>26</td><td>Allison</td><td>Johnson</td><td>128782</td><td>1001</td></tr><tr class=""><td>27</td><td>Anthony</td><td>Ball</td><td>34386</td><td>1003</td></tr><tr class=""><td>28</td><td>Alexis</td><td>Beck</td><td>12260</td><td>1005</td></tr><tr class=""><td>29</td><td>Jason</td><td>Olsen</td><td>51937</td><td>1006</td></tr><tr class=""><td>30</td><td>Stephen</td><td>Smith</td><td>194791</td><td>1001</td></tr><tr class=""><td>31</td><td>Kimberly</td><td>Brooks</td><td>95327</td><td>1003</td></tr><tr class=""><td>32</td><td>Eric</td><td>Zimmerman</td><td>83093</td><td>1006</td></tr><tr class=""><td>33</td><td>Peter</td><td>Holt</td><td>69945</td><td>1002</td></tr><tr class=""><td>34</td><td>Justin</td><td>Dunn</td><td>67992</td><td>1003</td></tr><tr class=""><td>35</td><td>John</td><td>Ball</td><td>47795</td><td>1004</td></tr><tr class=""><td>36</td><td>Jesus</td><td>Ward</td><td>36078</td><td>1005</td></tr><tr class=""><td>37</td><td>Philip</td><td>Gillespie</td><td>36424</td><td>1006</td></tr><tr class=""><td>38</td><td>Nicole</td><td>Lewis</td><td>114079</td><td>1001</td></tr><tr class=""><td>39</td><td>Linda</td><td>Clark</td><td>186781</td><td>1002</td></tr><tr class=""><td>40</td><td>Colleen</td><td>Carrillo</td><td>147723</td><td>1004</td></tr><tr class=""><td>41</td><td>John</td><td>George</td><td>21642</td><td>1001</td></tr><tr class=""><td>42</td><td>Traci</td><td>Williams</td><td>138892</td><td>1003</td></tr><tr class=""><td>42</td><td>Traci</td><td>Williams</td><td>150000</td><td>1003</td></tr><tr class=""><td>42</td><td>Traci</td><td>Williams</td><td>160000</td><td>1003</td></tr><tr class=""><td>42</td><td>Traci</td><td>Williams</td><td>180000</td><td>1003</td></tr><tr class=""><td>43</td><td>Joseph</td><td>Rogers</td><td>22800</td><td>1005</td></tr><tr class=""><td>44</td><td>Trevor</td><td>Carter</td><td>38670</td><td>1001</td></tr><tr class=""><td>45</td><td>Kevin</td><td>Duncan</td><td>45210</td><td>1003</td></tr><tr class=""><td>46</td><td>Joshua</td><td>Ewing</td><td>73088</td><td>1003</td></tr><tr class=""><td>47</td><td>Kimberly</td><td>Dean</td><td>71416</td><td>1003</td></tr><tr class=""><td>48</td><td>Robert</td><td>Lynch</td><td>117960</td><td>1004</td></tr><tr class=""><td>49</td><td>Amber</td><td>Harding</td><td>77764</td><td>1002</td></tr><tr class=""><td>50</td><td>Victoria</td><td>Wilson</td><td>176620</td><td>1002</td></tr><tr class=""><td>51</td><td>Theresa</td><td>Everett</td><td>31404</td><td>1002</td></tr><tr class=""><td>52</td><td>Kara</td><td>Smith</td><td>192838</td><td>1004</td></tr><tr class=""><td>53</td><td>Teresa</td><td>Cohen</td><td>98860</td><td>1001</td></tr><tr class=""><td>54</td><td>Wesley</td><td>Tucker</td><td>90221</td><td>1005</td></tr><tr class=""><td>55</td><td>Michael</td><td>Morris</td><td>106799</td><td>1005</td></tr><tr class=""><td>56</td><td>Rachael</td><td>Williams</td><td>103585</td><td>1002</td></tr><tr class=""><td>57</td><td>Patricia</td><td>Harmon</td><td>147417</td><td>1005</td></tr><tr class=""><td>58</td><td>Edward</td><td>Sharp</td><td>41077</td><td>1005</td></tr><tr class=""><td>59</td><td>Kevin</td><td>Robinson</td><td>100924</td><td>1005</td></tr><tr class=""><td>60</td><td>Charles</td><td>Pearson</td><td>173317</td><td>1004</td></tr><tr class=""><td>61</td><td>Ryan</td><td>Brown</td><td>110225</td><td>1003</td></tr><tr class=""><td>61</td><td>Ryan</td><td>Brown</td><td>120000</td><td>1003</td></tr><tr class=""><td>62</td><td>Dale</td><td>Hayes</td><td>97662</td><td>1005</td></tr><tr class=""><td>63</td><td>Richard</td><td>Sanford</td><td>136083</td><td>1001</td></tr><tr class=""><td>64</td><td>Danielle</td><td>Williams</td><td>98655</td><td>1006</td></tr><tr class=""><td>64</td><td>Danielle</td><td>Williams</td><td>110000</td><td>1006</td></tr><tr class=""><td>64</td><td>Danielle</td><td>Williams</td><td>120000</td><td>1006</td></tr><tr class=""><td>65</td><td>Deborah</td><td>Martin</td><td>67389</td><td>1004</td></tr><tr class=""><td>66</td><td>Dustin</td><td>Bush</td><td>47567</td><td>1004</td></tr><tr class=""><td>67</td><td>Tyler</td><td>Green</td><td>111085</td><td>1002</td></tr><tr class=""><td>68</td><td>Antonio</td><td>Carpenter</td><td>83684</td><td>1002</td></tr><tr class=""><td>69</td><td>Ernest</td><td>Peterson</td><td>115993</td><td>1005</td></tr><tr class=""><td>70</td><td>Karen</td><td>Fernandez</td><td>101238</td><td>1003</td></tr><tr class=""><td>71</td><td>Kristine</td><td>Casey</td><td>67651</td><td>1003</td></tr><tr class=""><td>72</td><td>Christine</td><td>Frye</td><td>137244</td><td>1004</td></tr><tr class=""><td>73</td><td>William</td><td>Preston</td><td>155225</td><td>1003</td></tr><tr class=""><td>74</td><td>Richard</td><td>Cole</td><td>180361</td><td>1003</td></tr><tr class=""><td>75</td><td>Julia</td><td>Ramos</td><td>61398</td><td>1006</td></tr><tr class=""><td>75</td><td>Julia</td><td>Ramos</td><td>70000</td><td>1006</td></tr><tr class=""><td>75</td><td>Julia</td><td>Ramos</td><td>83000</td><td>1006</td></tr><tr class=""><td>75</td><td>Julia</td><td>Ramos</td><td>90000</td><td>1006</td></tr><tr class=""><td>75</td><td>Julia</td><td>Ramos</td><td>105000</td><td>1006</td></tr></tbody></table></div></div></div></main><footer class="footer"><div class="container" style="width: 310px;"><div style="display: flex; justify-content: space-between;"><a href="https://platform.stratascratch.com/terms-and-conditions">Terms and Conditions</a><span>•</span><a href="https://platform.stratascratch.com/privacy-policy">Privacy Policy</a></div></div></footer></div><script type="text/javascript" src="ms_employee_salary_files/runtimeapp.js"></script><script type="text/javascript" src="ms_employee_salary_files/app.js"></script><script type="text/javascript" src="ms_employee_salary_files/styles.js"></script><script type="text/javascript" src="ms_employee_salary_files/app_002.js"></script><div class="ReactModalPortal"></div><iframe name="__privateStripeMetricsController4830" allowtransparency="true" scrolling="no" allow="payment *" src="ms_employee_salary_files/m-outer-08a1fefa46cfc8cc94fc477ddcdb0555.html" aria-hidden="true" tabindex="-1" style="border: medium none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;" frameborder="0"></iframe></body></html>

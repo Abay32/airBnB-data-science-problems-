@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="yelp_reviews_files/css.css" rel="stylesheet"><link href="yelp_reviews_files/jquery.css" rel="stylesheet"><title>StrataScratch</title><script type="text/javascript" async="" src="yelp_reviews_files/analytics.js"></script><script type="text/javascript" async="" src="yelp_reviews_files/js_002.js"></script><script>!function(n,u){n._rwq=u,n[u]=n[u]||function(){(n[u].q=n[u].q||[]).push(arguments)}}(window,"rewardful")</script><script async="" src="yelp_reviews_files/rw.js" data-rewardful="509d71"></script><script async="" src="yelp_reviews_files/js.js"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-115949776-1")</script><link rel="shortcut icon" href="https://platform.stratascratch.com/fav.png"><link href="yelp_reviews_files/styles79fe2b62839ecd8e5c2e.css" rel="stylesheet"><style>.strata-editor-dragbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12px;
+  cursor: row-resize;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9FZGl0b3JEcmFnQmFyLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQWE7RUFDYix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLFlBQVk7RUFDWixrQkFBa0I7QUFDcEIiLCJzb3VyY2VzQ29udGVudCI6WyIuc3RyYXRhLWVkaXRvci1kcmFnYmFyIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGhlaWdodDogMTJweDtcbiAgY3Vyc29yOiByb3ctcmVzaXplO1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>.strata-editor-container {
+  position: relative;
+  background-color: #f5f5f5;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.strata-editor-container .ace_editor {
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333333;
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.ace-github .ace_print-margin {
+  background: transparent !important;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9Db2RlRWRpdG9yLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLHNCQUFzQjtFQUN0QixtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSx1QkFBdUI7RUFDdkIscUJBQXFCO0VBQ3JCLHFCQUFxQjtFQUNyQixjQUFjO0VBQ2QsOERBQThEO0FBQ2hFOztBQUVBO0VBQ0Usa0NBQWtDO0FBQ3BDIiwic291cmNlc0NvbnRlbnQiOlsiLnN0cmF0YS1lZGl0b3ItY29udGFpbmVyIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjVmNWY1O1xuICBib3JkZXItcmFkaXVzOiAycHg7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG4gIG1hcmdpbi1ib3R0b206IDFyZW07XG59XG5cbi5zdHJhdGEtZWRpdG9yLWNvbnRhaW5lciAuYWNlX2VkaXRvciB7XG4gIGxpbmUtaGVpZ2h0OiAxLjQyODU3MTQzO1xuICB3b3JkLWJyZWFrOiBicmVhay1hbGw7XG4gIHdvcmQtd3JhcDogYnJlYWstd29yZDtcbiAgY29sb3I6ICMzMzMzMzM7XG4gIGZvbnQtZmFtaWx5OiBNZW5sbywgTW9uYWNvLCBDb25zb2xhcywgJ0NvdXJpZXIgTmV3JywgbW9ub3NwYWNlO1xufVxuXG4uYWNlLWdpdGh1YiAuYWNlX3ByaW50LW1hcmdpbiB7XG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50ICFpbXBvcnRhbnQ7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.strata-editor-extension {
+  color: #fff;
+  background-color: #ccc;
+}
+
+.strata-editor-caption-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 9px;
+  font-size: 1rem;
+}
+
+.strata-editor-dataset-tables {
+  border-radius: 0.25rem;
+  padding: 0 0.5rem;
+  background-color: #b7e9f0;
+  color: #249cac;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9FZGl0b3JDYXB0aW9uQmFyLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQVc7RUFDWCxzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxhQUFhO0VBQ2IsOEJBQThCO0VBQzlCLG1CQUFtQjtFQUNuQixnQkFBZ0I7RUFDaEIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLHNCQUFzQjtFQUN0QixpQkFBaUI7RUFDakIseUJBQXlCO0VBQ3pCLGNBQWM7QUFDaEIiLCJzb3VyY2VzQ29udGVudCI6WyIuc3RyYXRhLWVkaXRvci1leHRlbnNpb24ge1xuICBjb2xvcjogI2ZmZjtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2NjYztcbn1cblxuLnN0cmF0YS1lZGl0b3ItY2FwdGlvbi1iYXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIHBhZGRpbmc6IDJweCA5cHg7XG4gIGZvbnQtc2l6ZTogMXJlbTtcbn1cblxuLnN0cmF0YS1lZGl0b3ItZGF0YXNldC10YWJsZXMge1xuICBib3JkZXItcmFkaXVzOiAwLjI1cmVtO1xuICBwYWRkaW5nOiAwIDAuNXJlbTtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2I3ZTlmMDtcbiAgY29sb3I6ICMyNDljYWM7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.strata-editor-spin {
+  animation: spin 1.5s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9RdWVyeUJ1dHRvbi5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxvQ0FBb0M7QUFDdEM7O0FBRUE7RUFDRTtJQUNFLHVCQUF1QjtJQUN2Qix1QkFBdUI7RUFDekI7RUFDQTtJQUNFLHlCQUF5QjtJQUN6Qix5QkFBeUI7RUFDM0I7QUFDRiIsInNvdXJjZXNDb250ZW50IjpbIi5zdHJhdGEtZWRpdG9yLXNwaW4ge1xuICBhbmltYXRpb246IHNwaW4gMS41cyBpbmZpbml0ZSBsaW5lYXI7XG59XG5cbkBrZXlmcmFtZXMgc3BpbiB7XG4gIGZyb20ge1xuICAgIHRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xuICAgIHRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xuICB9XG4gIHRvIHtcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpO1xuICAgIHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7XG4gIH1cbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><style>.strata-editor-buttons-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.strata-editor-hotkey-message {
+  margin-top: 0.25rem;
+  color: rgb(130, 130, 130);
+  font-size: 0.8125rem;
+  text-align: right;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9RdWVyeUJ1dHRvbnNTZWN0aW9uLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQWE7RUFDYix5QkFBeUI7RUFDekIsbUJBQW1CO0VBQ25CLFdBQVc7QUFDYjs7QUFFQTtFQUNFLG1CQUFtQjtFQUNuQix5QkFBeUI7RUFDekIsb0JBQW9CO0VBQ3BCLGlCQUFpQjtBQUNuQiIsInNvdXJjZXNDb250ZW50IjpbIi5zdHJhdGEtZWRpdG9yLWJ1dHRvbnMtd3JhcHBlciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGdhcDogMC41cmVtO1xufVxuXG4uc3RyYXRhLWVkaXRvci1ob3RrZXktbWVzc2FnZSB7XG4gIG1hcmdpbi10b3A6IDAuMjVyZW07XG4gIGNvbG9yOiByZ2IoMTMwLCAxMzAsIDEzMCk7XG4gIGZvbnQtc2l6ZTogMC44MTI1cmVtO1xuICB0ZXh0LWFsaWduOiByaWdodDtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><style>.strata-editor-result-table {
+  font-size: 1rem;
+}
+
+.table-striped.strata-editor-result-table tr.wrong {
+  background-color: #ffb9b9;
+}
+
+.table-striped.strata-editor-result-table tr.correct {
+  background-color: #90ee90;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9RdWVyeVJlc3VsdFRhYmxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSx5QkFBeUI7QUFDM0I7O0FBRUE7RUFDRSx5QkFBeUI7QUFDM0IiLCJzb3VyY2VzQ29udGVudCI6WyIuc3RyYXRhLWVkaXRvci1yZXN1bHQtdGFibGUge1xuICBmb250LXNpemU6IDFyZW07XG59XG5cbi50YWJsZS1zdHJpcGVkLnN0cmF0YS1lZGl0b3ItcmVzdWx0LXRhYmxlIHRyLndyb25nIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmYjliOTtcbn1cblxuLnRhYmxlLXN0cmlwZWQuc3RyYXRhLWVkaXRvci1yZXN1bHQtdGFibGUgdHIuY29ycmVjdCB7XG4gIGJhY2tncm91bmQtY29sb3I6ICM5MGVlOTA7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.strata-editor-output-title {
+  margin-top: 1rem;
+  font-size: 1.1875rem;
+  color: rgb(130, 130, 130);
+}
+
+.white-space-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.strata-editor-console-output {
+  padding: 1rem 2rem;
+}
+
+.strata-editor-alert {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+}
+
+.strata-editor-alert.info {
+  background-color: #b7e9f0;
+  color: #249cac;
+}
+
+.strata-editor-alert.warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.strata-editor-alert.danger {
+  background-color: #ffb9b9;
+  color: #c60201;
+}
+
+.strata-editor-results-table-wrapper {
+  max-height: 24rem;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.strata-editor-results-table-wrapper table {
+  margin-bottom: 0;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9FeGVjdXRpb25SZXN1bHRzLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQixvQkFBb0I7RUFDcEIseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UscUJBQXFCO0FBQ3ZCOztBQUVBO0VBQ0Usa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0Usd0JBQXdCO0VBQ3hCLG1CQUFtQjtFQUNuQixlQUFlO0VBQ2Ysc0JBQXNCO0FBQ3hCOztBQUVBO0VBQ0UseUJBQXlCO0VBQ3pCLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSx5QkFBeUI7RUFDekIsY0FBYztBQUNoQjs7QUFFQTtFQUNFLHlCQUF5QjtFQUN6QixjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLGNBQWM7RUFDZCxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEIiLCJzb3VyY2VzQ29udGVudCI6WyIuc3RyYXRhLWVkaXRvci1vdXRwdXQtdGl0bGUge1xuICBtYXJnaW4tdG9wOiAxcmVtO1xuICBmb250LXNpemU6IDEuMTg3NXJlbTtcbiAgY29sb3I6IHJnYigxMzAsIDEzMCwgMTMwKTtcbn1cblxuLndoaXRlLXNwYWNlLXByZS13cmFwIHtcbiAgd2hpdGUtc3BhY2U6IHByZS13cmFwO1xufVxuXG4uc3RyYXRhLWVkaXRvci1jb25zb2xlLW91dHB1dCB7XG4gIHBhZGRpbmc6IDFyZW0gMnJlbTtcbn1cblxuLnN0cmF0YS1lZGl0b3ItYWxlcnQge1xuICBwYWRkaW5nOiAwLjc1cmVtIDEuMjVyZW07XG4gIG1hcmdpbi1ib3R0b206IDFyZW07XG4gIGZvbnQtc2l6ZTogMXJlbTtcbiAgYm9yZGVyLXJhZGl1czogMC4yNXJlbTtcbn1cblxuLnN0cmF0YS1lZGl0b3ItYWxlcnQuaW5mbyB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNiN2U5ZjA7XG4gIGNvbG9yOiAjMjQ5Y2FjO1xufVxuXG4uc3RyYXRhLWVkaXRvci1hbGVydC53YXJuaW5nIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjNjZDtcbiAgY29sb3I6ICM4NTY0MDQ7XG59XG5cbi5zdHJhdGEtZWRpdG9yLWFsZXJ0LmRhbmdlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmI5Yjk7XG4gIGNvbG9yOiAjYzYwMjAxO1xufVxuXG4uc3RyYXRhLWVkaXRvci1yZXN1bHRzLXRhYmxlLXdyYXBwZXIge1xuICBtYXgtaGVpZ2h0OiAyNHJlbTtcbiAgb3ZlcmZsb3c6IGF1dG87XG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XG59XG5cbi5zdHJhdGEtZWRpdG9yLXJlc3VsdHMtdGFibGUtd3JhcHBlciB0YWJsZSB7XG4gIG1hcmdpbi1ib3R0b206IDA7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.strata-editor-code-widget {
+  margin-bottom: 2rem;
+}
+
+.strata-editor-question-link {
+  font-size: 1rem;
+}
+
+.strata-editor-error-inset {
+  position: absolute;
+  inset: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f2f2f2;
+  font-weight: 500;
+  z-index: 5;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9Db2RlRWRpdG9yV2lkZ2V0LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIseUJBQXlCO0VBQ3pCLGdCQUFnQjtFQUNoQixVQUFVO0FBQ1oiLCJzb3VyY2VzQ29udGVudCI6WyIuc3RyYXRhLWVkaXRvci1jb2RlLXdpZGdldCB7XG4gIG1hcmdpbi1ib3R0b206IDJyZW07XG59XG5cbi5zdHJhdGEtZWRpdG9yLXF1ZXN0aW9uLWxpbmsge1xuICBmb250LXNpemU6IDFyZW07XG59XG5cbi5zdHJhdGEtZWRpdG9yLWVycm9yLWluc2V0IHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBpbnNldDogMXJlbTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2YyZjJmMjtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgei1pbmRleDogNTtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><script src="yelp_reviews_files/v3.js"></script></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><header class="top" style="position: relative; z-index: 1000;"><nav class="navbar-static-top navbar-inverse navbar navbar-expand-md navbar-light"><a href="https://stratascratch.com/" class="navbar-brand"><img src="yelp_reviews_files/superset-logo.png" alt="Superset Logo" width="126"></a><button aria-controls="basic-navbar-nav" type="button" aria-label="Toggle navigation" class="navbar-toggler collapsed"><span class="navbar-toggler-icon"></span></button><div class="navbar-collapse collapse" id="basic-navbar-nav"><div class="mr-auto navbar-nav"><li><a href="https://platform.stratascratch.com/coding" data-rb-event-key="/coding" class="navbar-marging nav-link">Coding Questions</a></li><li><a href="https://platform.stratascratch.com/technical" data-rb-event-key="/technical" class="navbar-marging nav-link">Non-coding Questions</a></li></div><div class="navbar-nav"><li><a href="https://platform.stratascratch.com/pricing" data-rb-event-key="/pricing" class="navbar-marging nav-link"><i class="fa fa-lock" style="color: gold;"></i> Upgrade to Premium</a></li><li class="float-right"><div class="dropdown"><a href="" class="navbar-marging nav-link"><i class="fa fa-user"></i> Profile</a></div></li><li class="float-right"><a href="#" class="navbar-marging nav-link" role="button"><i class="fa fa-fw fa-sign-out"></i> Logout</a></li></div></div></nav></header><main><div style="margin-bottom: 40px; margin-top: 40px;" class="justify-content-md-center row"><div class="col-md-10"><div style="width: 100%; height: 20px; overflow-x: scroll;"><div style="width: 0px; height: 20px;"></div></div><div class="scroll-horizontal"><p class="text-grey">Your Solution Output:</p><table class="table table-bordered table-striped fixed-width strata-editor-result-table "><thead><tr><th>business_name</th><th>review_id</th><th>user_id</th><th>stars</th><th>review_date</th><th>review_text</th><th>funny</th><th>useful</th><th>cool</th></tr></thead><tbody id="myTable"><tr class=""><td>AutohausAZ</td><td>C4TSIEcazRay0qIRPeMAFg</td><td>jlbPUcCRiXlMtarzi9sW5w</td><td>5</td><td>2011-06-27</td><td>Autohaus
+ is my main source for parts for an old Mercedes that has been in the 
+family since new that I am restoring. The old beater is truly a labor of</td><td>1</td><td>2</td><td>1</td></tr><tr class=""><td>Citizen Public House</td><td>ZZ0paqUsSX-VJbfodTp1cQ</td><td>EeCWSGwMAPzwe_c1Aumd1w</td><td>4</td><td>2013-03-18</td><td>First
+ time in PHX.  Friend recommended.  Friendly waitstaff.  They were 
+understaffed and extremely busy, but we never knew.  The short ribs were
+ tende</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Otto Pizza &amp; Pastry</td><td>pF6W5JOPBK6kOXTB58cYrw</td><td>JG1Gd2mN2Qk7UpCqAUI-BQ</td><td>5</td><td>2013-03-14</td><td>LOVE
+ THIS PIZZA!  This is now one of my favorite pizza places in phoenix 
+area. My husband i walked into this cute family owned business and were 
+greet</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Giant Hamburgers</td><td>QBddRcflAcXwE2qhsLVv7w</td><td>T90ybanuLhAr0_s99GDeeg</td><td>3</td><td>2009-03-27</td><td>ok,
+ so I tried this place out based on other reviews. I had the 
+cheeseburger with everything, some fries, and a chocolate shake. The 
+burger was okay, </td><td>0</td><td>1</td><td>1</td></tr><tr class=""><td>Tammie Coe Cakes</td><td>Y8UMm_Ng9oEpJbIygoGbZQ</td><td>MWt24-6bfv_OHLKhwMQ0Tw</td><td>3</td><td>2008-08-25</td><td>Overrated.
+ The treats are tasty but certainly not the best I have ever had. I 
+would have rated this a two star but the cakes and cookies are REALLY pr</td><td>1</td><td>3</td><td>2</td></tr><tr class=""><td>Marcellino Ristorante</td><td>GTUOIBCEGGt_aGp-bRogfg</td><td>gopGuEb-ft6cHKMyCZEvJg</td><td>1</td><td>2010-12-17</td><td>This
+ place sucks. Food was average and we had to wait an hour even though we
+ had a reservation. My americano tasted like warm soy sauce and they 
+blame</td><td>2</td><td>3</td><td>0</td></tr><tr class=""><td>Shanghai Club</td><td>wHfxd0Bq4JYLiUEO55xe4Q</td><td>eVQ_yDkMlF62oofUwc29Kw</td><td>5</td><td>2013-09-19</td><td>This
+ is our favorite Chinese restaurant in the area! The service is always 
+consistent and our favorite waitress - Becky - always makes time to 
+spend w</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Freddys Frozen Custard &amp; Steakburgers</td><td>NfTR_B1yW1hPVEoXlSJV-w</td><td>YnHYlN1m7jDhAH9XgR4Dlg</td><td>4</td><td>2013-01-24</td><td>Love the tiny fries.</td><td>1</td><td>0</td><td>0</td></tr><tr class=""><td>Chipotle Mexican Grill</td><td>k-Oo0Gs4AC04GJAecu_iWg</td><td>HjpzhIQFRQbFmc_7CtFDmg</td><td>4</td><td>2011-05-11</td><td>When you don't feel like a full restaurant and you want more than the normal Mexican fast food, Chipolte fits the bill.
+The food is always fresh, the</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Arizona Fire &amp; Water Restoration</td><td>uvVmBnYQf8Mnt-s64D8XOg</td><td>zQP7cLujr-MJ207uuNFC1w</td><td>5</td><td>2011-08-03</td><td>This
+ is a fantastic company.  They have a very high rating with BBB and have
+ won a ton of customer service awards.  Hopefully you dont need them but
+ i</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Arriba Mexican Grill</td><td>0HOrc_RX87-01dbdFMSjJw</td><td>8m8HQtZox4vS-N-AW3mzxw</td><td>5</td><td>2013-12-31</td><td>Open
+ Christmas Day! Their food is delicious. Especially breakfast! Mmmm, the
+ salsa mmmmm. Hatch chills, pork, chicken...pollo asada, carne 
+asada...you</td><td>1</td><td>1</td><td>0</td></tr><tr class=""><td>Renegade Tap &amp; Kitchen</td><td>ZaCA3v9bWUpHuwZ6NO8C1Q</td><td>iVTzpbZ6qBdFllvcJLbmeg</td><td>4</td><td>2011-02-26</td><td>Dinner
+ on a busy Friday night.  Arrived on time for 7:30 reservation.  Table 
+not ready, restaurant and bar full.  Host and hostess pleasant, but not o</td><td>0</td><td>0</td><td>1</td></tr><tr class=""><td>Chipotle</td><td>_gcGIGfziNkhaIlkjhjKHg</td><td>3uU_6L8GnFOHTsO4I3oedg</td><td>3</td><td>2013-09-24</td><td>I
+ absolutely looove Chipotle. My problem is when you make me pay almost 
+$2 extra for guacamole... please don't be stingy with it. 
+Hook it up, Chipotl</td><td>1</td><td>2</td><td>1</td></tr><tr class=""><td>SanTan Village</td><td>LXiDBkXxcyL4IPnXbjw0VQ</td><td>Ba-tIR3a8hhwIk-y_hVzFg</td><td>4</td><td>2011-03-27</td><td>Next
+ month when the temps skyrocket to triple digits, i will prolly not 
+think soo highly of this place, but for now, San Tan has gotten alot of 
+my fre</td><td>0</td><td>1</td><td>2</td></tr><tr class=""><td>Love's</td><td>Er4Y-yj1JBW9cCbIf3ViKg</td><td>bC3By-saT9ylKu-dwWgtcw</td><td>4</td><td>2012-11-13</td><td>Plenty of gas pumps and convenient to get some cooked food inside.
+If getting gas, caution for enter and exits  at pumps.</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Dirty Drummer</td><td>tMYUWXoFuLdFecqqP60R3A</td><td>X_kPh3nt0AJPNPHye2rTlA</td><td>4</td><td>2011-06-18</td><td>I
+ was introduced to this place by my coworker and friend.  She goes here 
+every single day at lunch and its cute because everyone knows her there!
+  Any</td><td>1</td><td>3</td><td>2</td></tr><tr class=""><td>Euro Pizza Cafe</td><td>x2atXyt-QwCTzHhglzxj3Q</td><td>JKp42Y520azWI_WBzUMxTw</td><td>5</td><td>2012-04-07</td><td>This
+ is a nice cafe with a diverse menu. There's indoor or outdoor dining 
+with a view of the famous fountain! I ate here with my friend Connie who
+ als</td><td>0</td><td>0</td><td>1</td></tr><tr class=""><td>US Airways</td><td>o_YetnCcK_96ueIULO84fA</td><td>Vl4k0FiMNCRzEQwOpe4hXw</td><td>2</td><td>2012-07-20</td><td>Well,
+ they have good flights and connections from time to time. Their fleet 
+is very archaic though, probably most of their planes are older than me 
+(a</td><td>0</td><td>1</td><td>0</td></tr><tr class=""><td>Wal-Mart Neighborhood Market</td><td>c7JHcdWo5pZ3rMIDbsDt_g</td><td>IDHrwv_RCildFvmfWTkj5Q</td><td>2</td><td>2011-10-02</td><td>I occasionally stop in this store while driving past.  I will try to keep my comments on the positive side.
+NOTE if you don't read anything else: if </td><td>0</td><td>1</td><td>1</td></tr><tr class=""><td>Flancer's Cafe</td><td>78XeKBmSE0reBjsmqg7HNg</td><td>AYGHNy8gPxl2Q-etTT3hZw</td><td>3</td><td>2012-12-01</td><td>This
+ place has decent food, cute atmosphere, but the service is problematic.
+ I was stuck in Mesa for training and had lunch there on Halloween. My 
+pal</td><td>5</td><td>7</td><td>5</td></tr><tr class=""><td>Pappadeaux Seafood Kitchen</td><td>y6q-inMFFoEci-wRATp1-A</td><td>S3bvMOL50vgS_8-TtlGi4w</td><td>1</td><td>2010-12-02</td><td>$20
+ for a double Maker's Mark?  Me thinks not T.G.I. McPappadeaux.  I was 
+not impressed by anything that was there and will not only steer clear 
+but m</td><td>13</td><td>6</td><td>6</td></tr><tr class=""><td>Lone Star Steakhouse</td><td>fp73RBYM6NAnNWii9bxZ8w</td><td>7Ot-v89x44U_VdIPgD3qKg</td><td>4</td><td>2011-10-18</td><td>Great
+ food and a rare bird of a honest manager when it comes to whats in the 
+food. They have very comfy booths. Did nor care for the country music. I</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>EVO</td><td>3D3Avu2d8Gj-HEbqqWhswg</td><td>H982l-WK1p49z9jZFNMEfQ</td><td>4</td><td>2013-12-29</td><td>Great
+ atmosphere and decor..a welcome change from the chains and anchor 
+restaurants in the area that all feel the same. My wife could not stop 
+raving</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Conocido Park</td><td>0ESAQ8Ynk1nZPt5LayMwng</td><td>3OelvbzNK3KSmMdL0O9nRQ</td><td>4</td><td>2013-10-08</td><td>I
+ play this disc golf course weekly. The baskets are frequently moved to 
+keep the course fresh. Trees provide difficulty and also shade! There 
+are Dis</td><td>0</td><td>1</td><td>0</td></tr><tr class=""><td>Nate's Barber Shop</td><td>KEMsCW33Y1ZQEGTiMKmcrA</td><td>Hm_7pViZyrp_Z62lBRopAg</td><td>5</td><td>2012-12-12</td><td>Nates
+ barber shop is one of the best shops that I have encountered in my 
+life. If your looking for a great inexpensive ($13) good looking haircut
+ this</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>S &amp; S Tire and Automotive Service Center</td><td>99_nV5h4JHomT7cgh0V6lg</td><td>hYKjQHu2fk4nMgCWO50f-w</td><td>5</td><td>2011-02-25</td><td>My
+ partner and I needed two new tires and an alignment. We have a Chevy 
+Cobalt and its only two years old. Went to the dealership and they 
+wanted almo</td><td>1</td><td>0</td><td>0</td></tr><tr class=""><td>La Parrilla Suiza</td><td>ldvKeuzBSIesZEmFcr4ooQ</td><td>EXvhtd_05d1H9RlXa2CnIQ</td><td>5</td><td>2012-07-27</td><td>This
+ food is just....fantastic.  I don't know what else to say.  I grew up 
+eating at La Parrilla Suiza in Tucson.  The tortilla soup and "Queso 
+Suiza"</td><td>0</td><td>1</td><td>0</td></tr><tr class=""><td>Scratch Pastries &amp; Bistro</td><td>znMtXO5hY5XPqAMj_7VLRg</td><td>b2DKC4kC8-QeSeGZ_MF3XQ</td><td>5</td><td>2012-03-16</td><td>Yes,
+ it is in a strip mall. Don't let that fool you. This is some downright 
+good food with affordable prices.  Even though service was very 
+attentive </td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Joyride Taco House</td><td>uyLuLYfjs3S_8u3OkrIdmw</td><td>mY6zzvFbK0ENnQOdgtiT4Q</td><td>2</td><td>2013-10-19</td><td>Great
+ food! But not worth the HORRIBLE SERVICE! Took about 15 mins for drinks
+ that included a dr pepper. The server said the bartender is working 
+hard</td><td>2</td><td>3</td><td>2</td></tr><tr class=""><td>In-N-Out Burger</td><td>nxoxgQka8mTK-rLCh7sg3w</td><td>OwVB3YzcYeTRV09tpNDBSA</td><td>5</td><td>2011-07-08</td><td>Nothing
+ beats a #1 with grilled onions, no tomatoes, well done french fries and
+ a pink lemonade. I've been known to eat here twice to three times a we</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Roka Akor</td><td>fpjKqP8ONJ9rT82VoUhIQQ</td><td>4ozupHULqGyO42s3zNUzOQ</td><td>5</td><td>2011-07-18</td><td>I
+ hate to admit it, but it had been a long while since my last visit to 
+Roka Akor. I deserve a hand slap. But last week, I had the perfect 
+excuse to p</td><td>5</td><td>8</td><td>10</td></tr><tr class=""><td>Ruth's Chris Steak House</td><td>z3pSiipCrQM3B6i9PrnoGw</td><td>hJBOxmNREXmMGTfXgMcGug</td><td>5</td><td>2010-03-30</td><td>Best
+ steak I have ever eaten is at Ruth's Chris steakhouse. Comes to your 
+table sizzling hot. Sides are sold individually but are pretty good. The
+ des</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Yupha's Thai Kitchen</td><td>arf6Ne6h0UDXizsbMcOomQ</td><td>AkJFqLqHHAKY3H5R8p7cPQ</td><td>5</td><td>2012-12-09</td><td>Yupha
+ Thai is definitely a "yuppy" in terms of being a great spot to go to.  
+There are not too many places to eat near ASU Research Park, which is 
+rig</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Hotel Indigo Scottsdale</td><td>VDtEMw1X397ViDlP7oErTw</td><td>8Oy9-UwJQWffS0yOwPG6Ew</td><td>4</td><td>2013-07-01</td><td>I stayed here for one night while on a recent business trip! I wish I had discovered this place sooner....
+I was pleasantly surprised! I never heard </td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Da Vˆng</td><td>xbVGTBSsXmvu56FTbXp7Aw</td><td>F6mQhKLdj_PEdxLvDYOm2Q</td><td>5</td><td>2011-12-15</td><td>I
+ haven't had better pho anywhere in az. the large pho is enormous for 
+the price. i usually go with my family and order a regular sized pho for
+ myself</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Trader Joe's</td><td>HzI7nVlXJQJR3GO1KXYxlA</td><td>cMmQsFyrYBv6hIE6NffqZQ</td><td>5</td><td>2011-01-03</td><td>Trader
+ Joe's always goes above and beyond in all of their services.  The food 
+is fresh and delicious, the prices reasonable and the people are great. </td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Beaver Choice</td><td>18fIpXUbcm9k6Pmtkbf0aA</td><td>3gIfcQq5KxAegwCPXc83cQ</td><td>4</td><td>2011-04-21</td><td>So
+ I went here tonight with a friend. I was really excited and nervous to 
+try this place after reading the reviews. So you walk in and walk up to 
+the</td><td>1</td><td>1</td><td>0</td></tr><tr class=""><td>Some Burros</td><td>Oqogqje3RKspPwVcREfsXA</td><td>GnqNc74So5Pc8C3hkA2hCg</td><td>5</td><td>2009-07-10</td><td>Came
+ here w/ the hubster's. I've actually been craving this for some time 
+now. The pollo fundido is great! So goooooood! Its a pretty big portion.
+ The</td><td>0</td><td>2</td><td>1</td></tr><tr class=""><td>Superstition Ranch Market</td><td>B1xnRb2j_iW2Ws0u1B0FNw</td><td>EOLRikjQxTIpXB4aV1hbPQ</td><td>5</td><td>2012-01-05</td><td>Great place to shop, buy what you will use within a few days.</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Fuego Tacos</td><td>J6nrjjCjXc-hnRpZZPrLnQ</td><td>A99dyhEqcd_yXKPfBWeZHA</td><td>3</td><td>2011-08-18</td><td>I
+ went to a late lunch on a Saturday and the Esplanade area was quite 
+dead (I'm surprised because in the old days ('98-'99), I remember it to 
+be prett</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>The Woodshed</td><td>#NAME?</td><td>lsp7p2NuC5MX4_iuch3_OA</td><td>1</td><td>2012-06-17</td><td>We
+ only went here because it has been a traditional Father's Day event 
+with friends.  We decided to join them for the 1st time......really...we
+ will n</td><td>0</td><td>1</td><td>0</td></tr><tr class=""><td>Rosati's Pizza</td><td>Ld4Qg2Du0S3ulcdDCdm7Jg</td><td>SEDJTWEzMdqp7UsS1W3KXw</td><td>3</td><td>2012-10-24</td><td>First
+ of all, let me just say their food is fantastic. I love their pizza. I 
+love their salads. I love the cheesy garlic bread and their chicken 
+parm.</td><td>1</td><td>0</td><td>0</td></tr><tr class=""><td>Sekai Sushi</td><td>8TB8vM1H_SuEK2hS-5wu7g</td><td>TDlgqAxf268QOw-OUk2Urw</td><td>2</td><td>2012-05-02</td><td>I
+ am sorry to say people of Mesa you must have pretty low standards if 
+this is the best sushi bar in Mesa. I went there last night and I really
+ did no</td><td>0</td><td>2</td><td>0</td></tr><tr class=""><td>D'Vine Bistro &amp; Wine Bar</td><td>JvHH1Z84UJ1P5T9uIxEnyQ</td><td>rT4ycOjlrKefSAcjoQga5g</td><td>4</td><td>2012-04-12</td><td>Love the atmosphere and fantastic happy hour! Favorite spot in Mesa:)</td><td>0</td><td>1</td><td>0</td></tr><tr class=""><td>Scottsdale Stadium</td><td>eAYq_HT_gbD_ECgIWn3GoA</td><td>Mt3dPqOlnlGyVCftCcokmg</td><td>4</td><td>2012-03-27</td><td>Ignoring
+ the fact that Scottsdale Stadium is a bit overpriced these days for 
+Spring Training Giants tickets, its fun. Its basically one big party (in
+ </td><td>0</td><td>3</td><td>0</td></tr><tr class=""><td>Thai House</td><td>#NAME?</td><td>fczQCSmaWF78toLEmb0Zsw</td><td>4</td><td>2008-07-21</td><td>Damn...
+ Helen Y beat me to the punch and got the FTR for this place!  Oh well, I
+ will say that she did a great job with her review - I think I was Tha</td><td>3</td><td>8</td><td>7</td></tr><tr class=""><td>Jalape–o Inferno Bistro Mexicano</td><td>VRiSQiIfUnZdp0CxNMkLWg</td><td>4nJ5ryQTcQKs8mCrgt8-BQ</td><td>2</td><td>2011-04-05</td><td>The
+ dinner we had here was OK... nothing to rave about. The tortilla chips 
+were very good as others have mentioned... a mix of corn and deep fried 
+flo</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Caffe Boa</td><td>hi6a3fvAbtZq9jMIM8gkwQ</td><td>qa05pUVNapADHZXpHMPMeA</td><td>3</td><td>2010-06-26</td><td>Caffe
+ Boa is an interesting jokester, so, it is interestingly hard to review 
+it. I'll keep it short. I have gone here several times, and each time 
+wit</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Golden Valley</td><td>ZYEAmRpYHxJYcbIv-c7S2w</td><td>gg_OKjOAl_vVmdh5ZETuiw</td><td>3</td><td>2012-02-25</td><td>Can
+ I tell the difference between Uzbek cuisine and other Middle Eastern or
+ Mediterranean cuisine?  Nope.  For all I know it's only a matter of 
+where</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Canyon Cafe</td><td>gi9hLYOPk_fbvOr2mCHu7g</td><td>nH9OZEGfgseWjC5_IPGCXw</td><td>5</td><td>2010-08-09</td><td>Everything
+ about this place is wonderful!! I love the huge windows and outdoor 
+patio! Gorgeous! Their food is amazing everything from the chips (there</td><td>0</td><td>0</td><td>1</td></tr><tr class=""><td>Panda Express</td><td>r52OE-CfRoJQyjBtn0vHIQ</td><td>fMyKbyYY9Poy9B_1QZPKcg</td><td>1</td><td>2010-05-31</td><td>My
+ young children love Panda Express orange chicken. They eat it 2-4 times
+ a month. We were at the mall on a Saturday afternoon and stopped into 
+the f</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Gordon Biersch Brewery Restaurant</td><td>pfPFWY5SXQEEnlVJbFaNqA</td><td>nKaR5Z9Qmqc4RsakLLX_7w</td><td>3</td><td>2010-03-29</td><td>It's
+ very hard for me to enjoy a house brewed schwarzbier that, to me, 
+tastes more like Bud Light with a hint of acrid smoke flavor than what I
+ consid</td><td>2</td><td>4</td><td>3</td></tr><tr class=""><td>Chili's Grill &amp; Bar</td><td>42EOZ0KMF4wU1Sz7oeLfpA</td><td>AfyzIHPy5zds_mqf2Jdc9g</td><td>3</td><td>2011-02-07</td><td>I
+ love Chili's. My husband and I always go for the 2 for $20 deal at 
+whatever Chili's location we may be, but this location seemed to skimp 
+out on the</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Beckett's Table</td><td>lNLiQx1zi-ctta6v4LLhXw</td><td>GJwbccjXgoRPbNuWcNKYXA</td><td>5</td><td>2012-01-29</td><td>Beckett's
+ Table is a fantastic restaurant for people who want great food, great 
+wine, and great service. My wife and I dined there with a couple of fr</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>My Big Fat Greek Restaurant</td><td>IuSys52QuyTxGv3HLFKBSw</td><td>1gY1N3pkxTzh7kK4BxANyw</td><td>4</td><td>2011-05-07</td><td>I hated Greek food, until I tried this place. 
+My "health nut" girlfriend had to drag me to this place, kicking and screaming. After all, my long ago</td><td>2</td><td>3</td><td>3</td></tr><tr class=""><td>Goldmans Deli</td><td>6DggWM9rgzC_mIo4THFpMA</td><td>PKZvqm3IeWiWBYoDDoEG4w</td><td>5</td><td>2012-09-02</td><td>Traveled
+ in from the east coast so I got to Arizona very early in the day.  I 
+needed to kill some time before I could check into my hotel room so I en</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Macayo's Depot Cantina</td><td>98nvcyGhtHlKO8pDlOcCsA</td><td>bZFRqP7s0Vszxeu8_IwYow</td><td>3</td><td>2008-03-21</td><td>I
+ finally ate lunch here after not being able to get decent parking for 
+Quiznos on Mill Ave.  My coworker and I were starving and needed a place
+ to sh</td><td>0</td><td>2</td><td>3</td></tr><tr class=""><td>Rayner's Chocolate &amp; Coffee Shop</td><td>GCdNDjutQWsT-qaYwW0zxw</td><td>M28A6JPQFBJnRBCfODe8IA</td><td>4</td><td>2013-05-15</td><td>Cute
+ bakery/coffee shop hidden in a little plaza on 51st Ave off of 
+Thunderbird Rd. Nice selection of unique baked goods, chocolates and 
+coffee drinks</td><td>0</td><td>1</td><td>0</td></tr><tr class=""><td>Sushi Brokers</td><td>up3ueFZ1xJh_ts6dVu3_0A</td><td>hDlSSyDreM9xY4yQWPm54w</td><td>2</td><td>2009-02-26</td><td>--expensive for business lunch
+--servers very attentive, prompt
+--lacks nth-degree detail of a Japanese chef running things; rolls and standards are s</td><td>4</td><td>3</td><td>3</td></tr><tr class=""><td>The Vig Uptown</td><td>rib7dXO863eL5VGUDsot8g</td><td>uQCk37gNl1bEmkjAv6_kAw</td><td>4</td><td>2011-04-17</td><td>My
+ meal was great; the decor / layout is great also, with a lovely patio 
+out back. The only downsides are parking, and the fact that the entrance
+ is a</td><td>0</td><td>1</td><td>0</td></tr><tr class=""><td>Lo-Lo's Chicken &amp; Waffles</td><td>IlFoK4meMZ7Ws4enESzeTQ</td><td>EacK6XwZjsTD6QYSIRlJ7Q</td><td>5</td><td>2008-07-14</td><td>At
+ first most of my noobie friends are very skeptical about the fusion of 
+Chicken and Waffles.  but after taking them to this place and 
+experiencing f</td><td>2</td><td>3</td><td>2</td></tr><tr class=""><td>Shoe Carnival</td><td>YhlJA_CuoZlK4FIJUHlCnw</td><td>_PzSNcfrCjeBxSLXRoMmgQ</td><td>2</td><td>2010-05-17</td><td>I
+ had a $5 coupon in the mail so I was like what the heck. And is it next
+ to Home Goods (one of my favie home decoration stores). I got to the 
+store i</td><td>2</td><td>1</td><td>0</td></tr><tr class=""><td>My Big Fat Greek Restaurant</td><td>Qe0FO565tGfTxb7QtNCVwg</td><td>2vl3MXKr8iQOWTNse5kgdw</td><td>3</td><td>2008-04-03</td><td>Nice menu selection; food was tasty.  Good atmosphere.  Wished they had a restaurant in the LA area.</td><td>0</td><td>1</td><td>0</td></tr><tr class=""><td>Casey Moore's Oyster House</td><td>R7ZJPW4qEXuqI41aaWmO0A</td><td>rLtl8ZkDX5vH5nAx9C3q5Q</td><td>4</td><td>2009-04-02</td><td>This
+ is a fun place for appetizers and drinks if it is not too crowded and 
+the temperature is just right outside.  Otherwise the inside gets way 
+too p</td><td>1</td><td>2</td><td>1</td></tr><tr class=""><td>Q to U BBQ</td><td>IJxqQwzJjAURPBAB_-iOAA</td><td>MSgZpSWlf8T2H_46OWNgCQ</td><td>5</td><td>2011-09-08</td><td>Really
+ enjoyed the Ribs and fries, I came with friends that really like BBQ, 
+they agree, the ribs were terrific!  I am sure we will be going back to Q</td><td>1</td><td>1</td><td>1</td></tr><tr class=""><td>Lightning Lube</td><td>kezCWAz6MO1wKwXB_DK-3Q</td><td>bwmXfjwrogAaGqV33kSVpQ</td><td>3</td><td>2013-08-24</td><td>$115
+ for an oil change and two air filters for my civic. I must've had a 
+really long day or she had magical powers and made me forget I could 
+simply c</td><td>0</td><td>1</td><td>1</td></tr><tr class=""><td>Athens Gyros</td><td>aAgVzZU2b0YbYGi4byeI6w</td><td>L8_GwFxxtGSYR2F_dglpSg</td><td>4</td><td>2013-08-17</td><td>Great
+ food nice service.  The girl that worked up front introduced herself to
+ the other patrons that were there and asked them how the food was but 
+no</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Metro Light Rail</td><td>lG8Swugg_DQxY3NgT_BEig</td><td>LqgGgWi3FLHBViX9tmZ9sw</td><td>3</td><td>2011-10-31</td><td>I
+ just wish that this stupid HUGE metropolis could have more LIGHT RAIL 
+connections!! compared to the circus you have to stand in the buses, the
+ LR is</td><td>1</td><td>1</td><td>1</td></tr><tr class=""><td>Oregano's Pizza Bistro</td><td>7QvgM_LJi6SRp_GuOXPFZQ</td><td>for16MiFS1M_8_cne6IbIw</td><td>4</td><td>2013-02-04</td><td>Big Delicious portions!</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Gallo Blanco</td><td>gULD5qz_CQI9clPWh2FNHA</td><td>Z02XdD0muEz2FFQKPERMYQ</td><td>5</td><td>2013-12-29</td><td>Stopped in here one night right before Christmas.  
+Short and sweet:
+Margaritas - very good (and huge by the way)
+Tacos - awesome
+Guacamole - exce</td><td>2</td><td>2</td><td>2</td></tr><tr class=""><td>Los Dos Molinos</td><td>JcWhDcyNl3r_Tbeqiac15Q</td><td>GoymUzKqvET2QOZkIWZi9w</td><td>4</td><td>2014-01-07</td><td>We
+ have a friend who said the salsa is way too hot. All I heard was "you 
+must try Los Dos Molinos". We love spicy food and are always up to a 
+challeng</td><td>0</td><td>1</td><td>1</td></tr><tr class=""><td>Nancy's Nail Salon</td><td>ZGo8c57MrzQrSN6R7zO1uQ</td><td>A9g7YnTtsSV-wEIo3HI1YQ</td><td>4</td><td>2011-06-09</td><td>Came
+ here with my sister in law she had a coupon for a 27.99 mani/ spa pedi.
+ The staff was friendly they have a tv and plenty of magazines to look 
+thr</td><td>0</td><td>1</td><td>0</td></tr><tr class=""><td>Changing Hands Bookstore</td><td>1xzMe1EEwhF23RNh3InKkQ</td><td>fPHLPrymsyb6WSFFKoMrTQ</td><td>5</td><td>2010-10-26</td><td>This
+ not-so-little bookstore has it all... new and used books, a unique gift
+ section, book signings and events, wonderful staff and a cool, 
+organized,</td><td>0</td><td>0</td><td>1</td></tr><tr class=""><td>Tortilla Fish</td><td>OmSYYxZskG9BeRMwb5Dltw</td><td>MxO7EY766jVoFEZzkpwmOQ</td><td>2</td><td>2013-10-06</td><td>My
+ experience wasn't bad, just not up to the hype of all the other 
+reviews. I tried the shrimp, fish, campechana and machaca tacos. The 
+shrimp tacos w</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Pet Club</td><td>0LvO1yc-52fJ6vIHaFVdAw</td><td>LXOhR4ZUULSbBNztxYZ2dQ</td><td>2</td><td>2013-07-16</td><td>That
+ awkward moment when local competitors come write negative reviews about
+ a store and then direct traffic to their own store....</td><td>0</td><td>1</td><td>1</td></tr><tr class=""><td>Taste of Tops</td><td>J2lGBvJOcuhmauWs3rgMSg</td><td>aIAjAU-6NH583EkQ6E9KRw</td><td>4</td><td>2009-10-09</td><td>Okay,
+ in interest of full disclosure, I literally live around the corner and 
+across the street from Tops Liqour and have been waiting forever for 
+this</td><td>1</td><td>1</td><td>1</td></tr><tr class=""><td>Carolina's Mexican Food</td><td>N6eg6Jc_mL_XHMGmw6GElw</td><td>cbxUyCUMjkWAs1h4auYeAw</td><td>4</td><td>2012-01-31</td><td>If
+ you're looking for real Mexican in a hurry this is your place. This is 
+one of places ill always bring out of town guests who can't find good 
+Mexica</td><td>0</td><td>0</td><td>1</td></tr><tr class=""><td>Super L Ranch Market</td><td>cK3J7FAqruLZM_Y5J29Q8Q</td><td>z06IHGXI_ofBc2DkAbCgnA</td><td>5</td><td>2011-05-09</td><td>HOLY CRAP THEY HAVE FROZEN XIAOLONGBAO.  :)
+These delicious little bites of porky, soupy dumpling heaven have eluded me since I first tasted them in </td><td>2</td><td>2</td><td>1</td></tr><tr class=""><td>Salt Cellar</td><td>IXGX_Lk2NgCH-0OQNcGMpQ</td><td>E4HbTIHd9PVjUnEKpysaLw</td><td>5</td><td>2011-10-04</td><td>My
+ experience here was absolutely amazing.  My boyfriend and I had 
+reservations for 7:30 pm on a Saturday night and the service was amazing
+ and the fo</td><td>0</td><td>2</td><td>1</td></tr><tr class=""><td>Rosita's Place</td><td>f_yQqlsim0S9YAIIYFvR5Q</td><td>7nlZJW84Adt6oYn2shnn_g</td><td>3</td><td>2013-05-30</td><td>The
+ food here is delicios, but it takes forever. From the time I ordered to
+ when I was served 25minutes. Come only if you have time to spare to sit
+ an</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Matador Restaurant</td><td>x927gFqVNPSOPwNrKqPmmQ</td><td>nyHh14Vb9S269-kGKaUelg</td><td>4</td><td>2011-08-09</td><td>I've
+ eaten at Matador almost once a month for about15 years. I won't get 
+into the logistics of others reviews. I give the higher than average 
+star rat</td><td>0</td><td>0</td><td>1</td></tr><tr class=""><td>Hanny's</td><td>riZp_RIN28ld-U2Q5dhKhA</td><td>GRgBu4K7GOb3354esp_xkg</td><td>4</td><td>2010-06-08</td><td>Food = 4 stars
+Place = 5 stars             
+Service = 4 stars
+I REALLY like this place. It looks super classy inside and the deco on both floors is a</td><td>3</td><td>3</td><td>3</td></tr><tr class=""><td>Crust Pizza and Wine Cafe</td><td>rTc3d_GYXyHuf_tQoED80g</td><td>AOmdmYYSeLUstcN084_wMA</td><td>1</td><td>2012-10-16</td><td>I
+ told my friend that I'd rather eat out of a vending machine, and he 
+said.. "Yelp THAT!"   I had the calamari app, the caprese salad and the 
+eggplant</td><td>2</td><td>1</td><td>0</td></tr><tr class=""><td>Ocean Air</td><td>9gLTx4HjE-NeSa3KTfGJJQ</td><td>K0U0Hp6rgXHrYCG4jpPT8w</td><td>5</td><td>2013-09-01</td><td>Thank
+ you! Ocean Air came highly recommended and now I know why!! Excellent, 
+fast, friendly service!!! Reasonably price AC maintenance and FAST 
+respon</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Sleepy Dog Brewpub</td><td>9gtyU7vjWUjddmFrT97sww</td><td>Fm0EXFwIfDQoIm9RgcAOKQ</td><td>3</td><td>2013-04-06</td><td>As a number of others have said, the beer is good with a good number of choices. The food is pretty good too. 
+The biggest issue has been service. The</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>unPhogettable</td><td>yVK0x3_-o16ufBbIyqGJRw</td><td>sWh4Tjwa8ch_rziHtTN9LA</td><td>5</td><td>2013-08-27</td><td>Always
+ amazing service! Always amazing pho! Add veggies to a meat dish! The 
+spring rolls A1 &amp; A6 are the best in town!!! We are now here on a 
+weekly b</td><td>1</td><td>1</td><td>1</td></tr><tr class=""><td>Paradise Valley Burger Company</td><td>bkZ67PfRlKLKl4x5mIFYSg</td><td>ff00OcqImnNYy-OvSgUZyw</td><td>5</td><td>2013-11-04</td><td>Best burgers in town! They don't skimp on quality or ingenuity.</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Hanny's</td><td>4n_3G2Xux0stcgOUsrzYaw</td><td>ev7D2jo5OUDeHf0dWoWlsQ</td><td>2</td><td>2012-06-25</td><td>Super
+ disappointing, they won't take reservations and I wanted to make a 
+reservation for 20 persons. I've been here many many times and love the 
+food </td><td>0</td><td>0</td><td>2</td></tr><tr class=""><td>Golden Panda</td><td>ikNpO72tj7uI5VTatHpoAA</td><td>80OFMLRA0yW3sE4ciYg_vA</td><td>1</td><td>2009-10-10</td><td>Why
+ oh why is it so hard to find good Chinese food in this town?  The two 
+behind the counter at this place are Chinese - please don't tell me you 
+eat</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Breakfast Club</td><td>U_oJEB166nCeBNY-wqadxw</td><td>AMYi-53cxstrCR5wqyY1KA</td><td>5</td><td>2011-01-11</td><td>O-M-Goodness!
+ What luck to have eaten here for breakfast!! Huge portions served with 
+fresh fruit slices or mixed berries. Great service and very nice</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Ulta Salon Cosmetics &amp; Fragrance</td><td>9e3MOWg4zrq_NOqKP3fMcQ</td><td>F6QsMoJdvtohlbnST-fDyQ</td><td>4</td><td>2011-03-14</td><td>I
+ really like this store and have been going here for as long as they 
+have been open. 18 or 19 years. It is always exciting to be rewarded for
+ the pro</td><td>1</td><td>1</td><td>0</td></tr><tr class=""><td>Essence Bakery CafŽ</td><td>NkekoPY-4txUxkyoN_Tu4w</td><td>DrWLhrK8WMZf7Jb-Oqc7ww</td><td>5</td><td>2012-09-14</td><td>Ok,
+ I'm not sure I ever had this pastry combination, but it was clearly a 
+great item. It was the Chocolate almond croissant. Usually those two 
+varieti</td><td>0</td><td>1</td><td>0</td></tr><tr class=""><td>zpizza</td><td>UJEPSoO6yNnR8kdneDy0rg</td><td>fSi-yrKtBD58h2vPxjNE1A</td><td>4</td><td>2010-12-01</td><td>We
+ ordered 4 rusticas for delivery using their buy-one-get-one promo 
+online. They had a great deal on rustica pizzas, but somewhere in the 
+fine print </td><td>2</td><td>1</td><td>1</td></tr><tr class=""><td>Kona Grill</td><td>osYRF4FQe4cziGIXz33eQQ</td><td>gITFg65GtRDUb-0n460vNg</td><td>4</td><td>2011-03-17</td><td>I've
+ eaten at Kona Grill twice in two days while doing business in the area.
+  I had the Kona Burger and the Pepperoni Pizza.  The burger was 
+fantastic</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>White House</td><td>xn2LkVHBuRZ_jAg-LIiQ4Q</td><td>wFweIWhv2fREZV_dYkz_1g</td><td>4</td><td>2011-07-25</td><td>It's
+ been a while since I took part in the nightlife in Scottsdale, it's not
+ my scene but I was invited to White House for a party so you know how 
+tha</td><td>3</td><td>5</td><td>4</td></tr><tr class=""><td>Crowne Plaza Resort Hotel San Marcos Golf Resort</td><td>bMKW11Cf1Zeu1zWkzDbtrQ</td><td>Kt9NwDONle_mc0QHTud9jw</td><td>1</td><td>2011-07-18</td><td>Rating
+ the golf course, horrible!!  Thank goodness there was no one in front 
+of us and we zipped around the course.  They clearly stopped maintaining
+ </td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Hon Machi</td><td>mu8Gst6LkzG5ahmolCH55g</td><td>KucBnMrhalzxnD9AWrxwYQ</td><td>5</td><td>2011-06-21</td><td>Great place for sushi and tepan - period. Not the "high-end" places but a rock solid place with lots of variety and good prices.</td><td>0</td><td>1</td><td>0</td></tr><tr class=""><td>Bourbon Steak a Michael Mina Restaurant</td><td>AA6QQUFGWWkZlbpat46OfQ</td><td>cEIeuU0-4fX0Y4qCUW3PwQ</td><td>2</td><td>2008-12-01</td><td>My
+ husband, some friends and I went to this place for restaurant week. We 
+all sampled different dishes to experience a range of items - the 
+multi-flav</td><td>0</td><td>1</td><td>2</td></tr><tr class=""><td>Tempe's Front Porch</td><td>J71o5dOSoxoOhcR8NEo4Og</td><td>R4Ax3btoJ6qLXhqq6J50VQ</td><td>4</td><td>2014-01-06</td><td>This
+ is the front porch of Monti's, my boyfriend and I were pretty confused 
+looking for it.  It's outdoors with a bunch of heating lamps, be sure to
+ s</td><td>1</td><td>2</td><td>1</td></tr><tr class=""><td>Joyride Taco House</td><td>pKe_ORPqaW0vfGyFkbxdHw</td><td>xv9nUSKR5RqnkgD0tufTfA</td><td>4</td><td>2013-12-02</td><td>Tried
+ this place tonight with my boo and  I am definitely a fan. He loved his
+ carne asada burrito and my enchiladas were super tasty. They are a 
+littl</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Residence Inn Tempe</td><td>VUgm5DXgySh18v75pPFbtQ</td><td>wndkuSWsCOQJRo1Dsm79Og</td><td>?</td><td>2011-12-28</td><td>Noisy!!
+  Poorly sound proofed rooms means that every car with booming stereos 
+outside you have to listen to!  I have never had this noisy of a hotel r</td><td>0</td><td>1</td><td>0</td></tr><tr class=""><td>Maloney's on Shea</td><td>GsKuJK_VwyMCs8CEWRvmow</td><td>Ovpa3S8xD96dLE5eDxcxJg</td><td>?</td><td>2007-02-22</td><td>This
+ is the "new" Maloney's, or atleast the newest, that I know of. There 
+are other Maloney's peppered throughout the state, in Tempe, Tucson, and
+ Fla</td><td>0</td><td>2</td><td>1</td></tr><tr class=""><td>China King</td><td>JrPq92qjI7yw1hik2JzwTw</td><td>uNbB1uR4EBhmygUc3IfPAw</td><td>?</td><td>2010-07-15</td><td>Looking for a real Chinese restaurant with pink table clothes, fish tanks, and the works? Look no more. China King is it.
+I haven't tried their dim s</td><td>1</td><td>2</td><td>1</td></tr><tr class=""><td>Arriba Mexican Grill</td><td>Nagwfx92hDCamTkd7IUnYA</td><td>umFk-9qCmxsmiZw1e_vmKQ</td><td>?</td><td>2010-09-16</td><td>Great
+ Carne Asada.  Pretty rad that they have Hatch Green Chilis from New 
+Mexico, and an entire portion of their menu dedicated to New Mexican 
+food, a</td><td>0</td><td>0</td><td>0</td></tr><tr class=""><td>Stacy's Pit Stop BBQ</td><td>0gl0HcuiebsHjTvUAYvzmA</td><td>gN03qFYysM5DbgjuV6N0QQ</td><td>?</td><td>2012-06-22</td><td>Stacy your secret spicy BBQ sauce is kinda HOT. 
+When I drove up, several people already had orders in and waiting. That is a good sign. Stacy's Smok</td><td>1</td><td>6</td><td>4</td></tr><tr class=""><td>Lunardis</td><td>fpjKqP8ONJ9rT8209thIQQ</td><td>9itypHULqGyO42s3zNUzOQ</td><td>5</td><td>2018-06-11</td><td>This is the nicest grocery store in the city. I actually met my wife at this grocery store while shopping for avocados.</td><td>6</td><td>7</td><td>10</td></tr></tbody></table></div></div></div></main><footer class="footer"><div class="container" style="width: 310px;"><div style="display: flex; justify-content: space-between;"><a href="https://platform.stratascratch.com/terms-and-conditions">Terms and Conditions</a><span>•</span><a href="https://platform.stratascratch.com/privacy-policy">Privacy Policy</a></div></div></footer></div><script type="text/javascript" src="yelp_reviews_files/runtimeapp.js"></script><script type="text/javascript" src="yelp_reviews_files/app.js"></script><script type="text/javascript" src="yelp_reviews_files/styles.js"></script><script type="text/javascript" src="yelp_reviews_files/app_002.js"></script><div class="ReactModalPortal"></div><iframe name="__privateStripeMetricsController1810" allowtransparency="true" scrolling="no" allow="payment *" src="yelp_reviews_files/m-outer-08a1fefa46cfc8cc94fc477ddcdb0555.html" aria-hidden="true" tabindex="-1" style="border: medium none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;" frameborder="0"></iframe></body></html>
